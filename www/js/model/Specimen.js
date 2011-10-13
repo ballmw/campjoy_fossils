@@ -3,7 +3,7 @@ Ext.regModel('Specimen', {
         {name: 'id', type: 'string'}
     ]
 });
-CinJUG.stores.Specimen = new Ext.data.Store({
+App.stores.Specimen = new Ext.data.Store({
   model : "Specimen",
   sorters : {property:'id',direction:'DESC'}    
 });

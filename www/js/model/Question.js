@@ -4,6 +4,6 @@ Ext.regModel('Question', {
     ]
 });
 
-CinJUG.stores.Question = new Ext.data.Store({
+App.stores.Question = new Ext.data.Store({
   model: 'Question'
 });

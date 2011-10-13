@@ -1,9 +1,10 @@
 App.views.Catalog = Ext.extend(Ext.Panel, {
     layout:'fit',
     initComponent: function(){
+      this.template = 'catalog';
+      this.store = App.stores.Specimen;
         this.list = new Ext.List({
             fullscreen: true,
-            
             defaults: {
                 scope: this
             },
