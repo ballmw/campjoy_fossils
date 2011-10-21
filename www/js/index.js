@@ -2,6 +2,7 @@ Ext.ns('App', 'App.views', 'App.cache', 'App.stores', 'App.persistence');
 
 App.defaultAnim = Ext.is.Android ? false : 'slide';
 
+
 App = new Ext.Application({
   defaultTarget : "viewport",
   name : "App",
