@@ -1,6 +1,7 @@
 App.views.Specimen = Ext.extend(Ext.Panel, {
 	layout : 'fit',
 	cls : 'customPanel',
+	back_name : 'home',
 	//fullscreen : true,
 	dockedItems : [{
 		xtype : 'toolbar',
@@ -8,8 +9,9 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 		items : [{
 			text : 'Back',
 			ui : 'back',
+			scope : this,
 			handler : function() {
-				App.viewport.navTo('catalog');
+				App.viewport.navTo(App.viewport.specimenView.back_name);
 				App.viewport.tabBar.show();
 			}
 		}, {

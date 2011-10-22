@@ -26,7 +26,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		this.setActiveItem(1);
 	},
 	history : [],
-	navTo : function(dest, params) {
+	navTo : function(dest, params, back_name) {
 		var index = 0;
 		var showTabBar = true;
 		var view = this.homeView;
@@ -47,6 +47,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 			case 'specimen':
 				showTabBar = false;
 				this.specimenView.specimen = params;
+				this.specimenView.back_name = back_name;
 				view = this.specimenView;
 				break;
 		}
