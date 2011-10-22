@@ -25,6 +25,23 @@ App.PhoneApp = Ext.extend(Ext.TabPanel, {
   navigateToDichotomousKey: function(){
   	this.setActiveItem(1);
   },
+  history: [],
+  navTo: function(dest, params){
+  	var index = 0;
+  	var showTabBar = true;
+  	switch (dest.toLowerCase()) {
+  		case 'key':
+  			index = 1;
+  			showTabBar = false;
+  			break;
+		case 'specimen':
+			index = 3;
+			showTabBar = false;
+			break;
+  	}
+  	this.setActiveItem(index);
+  	this.tabBar[(showTabBar) ? 'show' : 'hide'](true);
+  },
   initComponent : function() {
     // console.log('init PhoneApp');
     this.homeView = new App.views.Home({
@@ -40,8 +57,12 @@ App.PhoneApp = Ext.extend(Ext.TabPanel, {
       iconCls: 'catalog',
       title: "Catalog"
     });
+    this.specimenView = new App.views.Specimen({
+    	hidden: true,
+    	title: 'Specimen'
+    });
     
-    this.items = [ this.homeView, this.keyView, this.catalogView];
+    this.items = [ this.homeView, this.keyView, this.catalogView, this.specimenView];
     
     App.PhoneApp.superclass.initComponent.call(this);
     console.log("initted PhoneApp");
