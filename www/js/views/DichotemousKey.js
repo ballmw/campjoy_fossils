@@ -18,7 +18,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 					var questions = fossil_key.find_statement_pair(statementId);
 			    	var questionHtml = App.viewport.keyView.getQuestionHtml(questions);
 			    	App.viewport.keyView.update(questionHtml);
-			    	this.doComponentLayout();
+			    	App.viewport.keyView.fireEvent('show');
 				}
 			}
 		}, {
@@ -35,13 +35,8 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 		this.startGame();
 		var questions = this.seekTopGameStack();
 		var questionHtml = this.getQuestionHtml(questions);
-		// if(this.html == undefined){
-			// console.log("on restart setting html");
-			// this.html = questionHtml;
-		// } else {
-			this.update(questionHtml);
-			this.doComponentLayout();
-		// }
+		this.update(questionHtml);
+		App.viewport.keyView.fireEvent('show');
 	},
 	
 	checkKeyAlreadyOnStack: function(num){
@@ -102,11 +97,11 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 				var nextStatementId = event.target.getAttribute('data-selectedoption');
 				if(nextStatementId == false){
 					var specimenIndex = event.target.getAttribute('data-index');
-					if(App.viewport.keyView.checkKeyAlreadyOnStack(-1) == false){
+					//if(App.viewport.keyView.checkKeyAlreadyOnStack(-1) == false){
 						var specimen = App.viewport.keyView.getSpecimen(specimenIndex-1);
-						App.viewport.keyView.gameStack.push([{key_pair: -1}]);	
+						//App.viewport.keyView.gameStack.push([{key_pair: -1}]);	
 						App.viewport.navTo('specimen', specimen, 'key');
-					}
+					//}
 					return;
 				}
 				var nextStatementId = parseInt(nextStatementId);
@@ -117,8 +112,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 				}
 			    var questionHtml = App.viewport.keyView.getQuestionHtml(questions);
 			    App.viewport.keyView.update(questionHtml);
-			    App.viewport.doComponentLayout();
-			    App.viewport.keyView.show()
+			    //App.viewport.doComponentLayout();
 			    App.viewport.keyView.fireEvent('show');
 			});
 	}
