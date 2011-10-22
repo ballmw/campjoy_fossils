@@ -31,7 +31,7 @@ div {
 	background: url(../images/footer.png);
 }
 
-.main {
+.main, .customPanel {
 	background: url(../images/background.png);
 }
 
