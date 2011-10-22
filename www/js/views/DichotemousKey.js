@@ -9,6 +9,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 		ui : 'light',
 		items : [{
 			text : 'Back',
+			width: 100,
 			handler : function() {
 				if(App.viewport.keyView.gameStack.length == 1){
 					return;
@@ -19,8 +20,9 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 					App.viewport.keyView.updatePage(questions);
 				}
 			}
-		}, {
+		},{xtype: 'spacer'}, {
 	  		text: 'Home',
+	  		width: 100,
 	  		handler: function(){
 	  			App.viewport.navTo('home');
 	  		}
