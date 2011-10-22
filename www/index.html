@@ -18,6 +18,8 @@
 <script src="js/views/WindowApp.js" type="text/javascript"></script>
 <script src="js/views/Home.js" type="text/javascript"></script>
 <script src="js/views/DichotemousKey.js" type="text/javascript"></script>
+<script src="js/fossil.js" type="text/javascript"></script>
+<script src="js/key.js" type="text/javascript"></script>
 <script src="js/views/Catalog.js" type="text/javascript"></script>
 <script src="js/views/Specimen.js" type="text/javascript"></script>
 <script src="js/model/Question.js" type="text/javascript"></script>
@@ -58,5 +60,17 @@ KEY
                 {title}
             </div>
         </textarea>
+        
+<textarea id="keyOptions" class="x-hidden-display">
+	<tpl for=".">
+		<div id="options{#}" class="key-option" data-selectedoption="{next_statement_pair}" data-index="{#}">
+           {statement}
+        </div>
+        <tpl if="xindex < xcount">
+        	<div class="key-option-or">OR</div>	
+        </tpl>
+	</tpl>
+</textarea>
+
 </body>
 </html>
