@@ -8,7 +8,12 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
       ui: 'light',
       items: [{
 	  	text: 'Back',
-	  	ui: 'back'
+	  	ui: 'back',
+	  	handler:function()
+	  	{
+	  		App.viewport.navTo('catalog');
+	  		App.viewport.tabBar.show();
+	  	}
 	  }, {
 	  	text: 'Home',
 	  	handler: function(){
@@ -18,13 +23,15 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 	  dock: 'top'
   }],
   initComponent : function() {
-  	this.update('hello');
+  	this.tpl = Ext.XTemplate.from('specimen');
+  	this.update(this.specimen);
 
     App.views.Specimen.superclass.initComponent.call(this);
 //    this.update(App.Info);
   },
   listeners: {
   	show: function(){
+  		this.update(this.specimen);
   		App.viewport.hideTabBar();
   	}
   }

@@ -39,16 +39,7 @@ App = new Ext.Application({
     
     
     this.on('profilechange', this.onProfileChange);
-    console.log("living more...");
-    $('.clickForMore').live('click', function() {
-      console.log('more');
-      event.preventDefault();
-
-      var details = $('.details', $(this));
-      
-      details.toggle();
-
-    });
+    
   },
   onProfileChange : function(profile, oldProfile) {
     console.log('change profile is ' + profile + ' was ' + oldProfile);
