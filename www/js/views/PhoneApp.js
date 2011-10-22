@@ -39,6 +39,8 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				break;
 			case 'key':
 				showTabBar = false;
+				this.keyView.restartPage();
+				this.keyView.bindOurEvents();
 				view = this.keyView;
 				break;
 			case 'catalog':
