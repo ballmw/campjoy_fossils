@@ -36,6 +36,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 			case 'home':
 				showTabBar = true;
 				view = this.homeView;
+                                view.restartPage();
 				break;
 			case 'key':
 				showTabBar = false;
