@@ -1,12 +1,13 @@
 App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 	layout : 'fit',
-	cls : 'customPanel',
+	//cls : 'customPanel',
 	fullscreen : true,
 	scroll : true,
 	dockedItems : [{
 		dock : 'top',
 		xtype : 'toolbar',
 		ui : 'light',
+		cls: 'header',
 		items : [{
 			text : 'Back',
 			width: 100,
@@ -104,26 +105,26 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 	bindOurEvents: function()
 	{
 		$('.key-option').bind('click touchstart', function(event) {
-				var nextStatementId = event.target.getAttribute('data-selectedoption');
-				if(nextStatementId == false){
-					var specimenIndex = event.target.getAttribute('data-index');
-					//if(App.viewport.keyView.checkKeyAlreadyOnStack(-1) == false){
-						var specimen = App.viewport.keyView.getSpecimen(specimenIndex-1);
-						//App.viewport.keyView.gameStack.push([{key_pair: -1}]);	
-						App.viewport.navTo('specimen', specimen, 'key');
-					//}
-					return;
-				}
-				//tranisition
-				App.viewport.keyView.transitionPage();
-					
-				var nextStatementId = parseInt(nextStatementId);
-				console.log('next statement is ' + nextStatementId);
-				var questions = fossil_key.find_statement_pair(nextStatementId);
-				if(App.viewport.keyView.checkKeyAlreadyOnStack(nextStatementId) == false){
-					App.viewport.keyView.gameStack.push(questions);	
-				}
-				App.viewport.keyView.updatePage(questions);
-			});
+			var nextStatementId = event.target.getAttribute('data-selectedoption');
+			if(nextStatementId == false){
+				var specimenIndex = event.target.getAttribute('data-index');
+				//if(App.viewport.keyView.checkKeyAlreadyOnStack(-1) == false){
+					var specimen = App.viewport.keyView.getSpecimen(specimenIndex-1);
+					//App.viewport.keyView.gameStack.push([{key_pair: -1}]);	
+					App.viewport.navTo('specimen', specimen, 'key');
+				//}
+				return;
+			}
+			//tranisition
+			App.viewport.keyView.transitionPage();
+				
+			var nextStatementId = parseInt(nextStatementId);
+			console.log('next statement is ' + nextStatementId);
+			var questions = fossil_key.find_statement_pair(nextStatementId);
+			if(App.viewport.keyView.checkKeyAlreadyOnStack(nextStatementId) == false){
+				App.viewport.keyView.gameStack.push(questions);	
+			}
+			App.viewport.keyView.updatePage(questions);
+		});
 	}
 });
