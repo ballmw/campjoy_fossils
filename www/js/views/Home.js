@@ -4,9 +4,12 @@ App.views.Home = Ext.extend(Ext.Panel, {
   fullscreen : true,
   scroll : true,
   initComponent : function() {
-    this.tpl = Ext.XTemplate.from('info'),
-
+    this.items = [new Ext.Button({
+    	text: 'Start',
+    	handler: function(){
+    		App.viewport.navigateToDichotomousKey();
+    	}
+    })];
     App.views.Home.superclass.initComponent.call(this);
-    this.update(App.Info);
   }
 });

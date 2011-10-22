@@ -19,9 +19,14 @@ App.PhoneApp = Ext.extend(Ext.TabPanel, {
   defaults : {
     scroll : 'vertical'
   },
-
+  hideTabBar: function(){
+  	this.tabBar.hide(true);
+  },
+  navigateToDichotomousKey: function(){
+  	this.setActiveItem(1);
+  },
   initComponent : function() {
-    console.log('init PhoneApp');
+    // console.log('init PhoneApp');
     this.homeView = new App.views.Home({
       iconCls: 'home',
       title: 'Home'
@@ -35,9 +40,9 @@ App.PhoneApp = Ext.extend(Ext.TabPanel, {
       iconCls: 'catalog',
       title: "Catalog"
     });
-
+    
     this.items = [ this.homeView, this.keyView, this.catalogView];
-
+    
     App.PhoneApp.superclass.initComponent.call(this);
     console.log("initted PhoneApp");
   },

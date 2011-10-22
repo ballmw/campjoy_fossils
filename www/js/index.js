@@ -30,12 +30,12 @@ App = new Ext.Application({
     console.log(Ext.getOrientation());
     this.orientation = window.orientation == 0 || window.orientation == 180 ? 'portrait' : 'landscape';
     this.orientation = Ext.getOrientation();
-    if (Ext.is.Phone){
-       this.viewport = new App.PhoneApp();
-    }
-    else {
-       this.viewport = new App.WindowApp();
-    }
+    //if (Ext.is.Phone){
+      this.viewport = new App.PhoneApp();
+    // }
+    // else {
+       // this.viewport = new App.WindowApp();
+    // }
     
     
     this.on('profilechange', this.onProfileChange);
