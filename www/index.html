@@ -41,18 +41,18 @@ KEY
         <textarea id="specimen-list" class="x-hidden-display">
 {name}
         </textarea>        
-  <textarea id="specimen" class="x-hidden-display">
-I am a specimen.<br>
-Name : {name}<br>
-Description : {description}
-<div>
-<img src="images/{photo_image}" width="200px">
+<div id="specimen" class="x-hidden-display">
+	{name}<br>
+	<div>
+		<img src="images/{photo_image}" width="200px">
+	</div>
 </div>
-<div>
-<img src="images/{drawing_image}" width="200px">
+<div id="specimenDetail" class="x-hidden-display" style="padding:5px;">
+	{description}
+	<div>
+		<img src="images/{drawing_image}" width="200px">
+	</div>
 </div>
-
-        </textarea>        
 <textarea id="nav" class="x-hidden-display">
             {text}
         </textarea>
