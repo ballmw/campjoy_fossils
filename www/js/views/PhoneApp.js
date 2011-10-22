@@ -5,6 +5,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 	layout : 'card',
 	modalWidth : 300,
 	modalHeight : 300,
+	cls: 'main',
 	tabBar : {
 		dock : 'bottom',
 		ui : 'dark',
@@ -76,6 +77,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		this.tabBar = new Ext.TabBar({
 			dock : 'bottom',
 			ui : 'dark',
+			cls: 'footer',
 			centered : true,
 			items : [{
 				text : 'Home',
