@@ -14,6 +14,8 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 				if(App.viewport.keyView.gameStack.length == 1){
 					return;
 				} else {
+					//tranisition
+					App.viewport.keyView.transitionPage();
 					App.viewport.keyView.gameStack.pop();
 					var statementId =  App.viewport.keyView.seekTopGameStack()[0].key_pair;
 					var questions = fossil_key.find_statement_pair(statementId);
@@ -95,6 +97,10 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 			this.bindOurEvents();
 		}
 	},
+	transitionPage: function(){
+		App.viewport.keyView.update('<div class="transition-key"> Analyzing </div> ');
+	},
+	
 	bindOurEvents: function()
 	{
 		$('.key-option').click( function(event) {
@@ -108,6 +114,9 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 					//}
 					return;
 				}
+				//tranisition
+				App.viewport.keyView.transitionPage();
+					
 				var nextStatementId = parseInt(nextStatementId);
 				console.log('next statement is ' + nextStatementId);
 				var questions = fossil_key.find_statement_pair(nextStatementId);
