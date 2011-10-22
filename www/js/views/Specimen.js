@@ -1,7 +1,8 @@
 App.views.Specimen = Ext.extend(Ext.Panel, {
 	cls : 'customPanel',
 	back_name : 'home',
-	//fullscreen : true,
+	fullscreen : true,
+	scroll:true,
 	dockedItems : [{
 		xtype : 'toolbar',
 		ui : 'light',

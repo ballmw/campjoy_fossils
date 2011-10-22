@@ -1,4 +1,29 @@
+
+@font-face {
+    font-family: 'Rockwell';
+    src: url('../fonts/RockwellStd.otf') format('opentype'), url('../fonts/RockwellStd.svg#RockwellStd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rockwell';
+    src: url('../fonts/RockwellStd-Bold.otf') format('opentype'), url('../fonts/RockwellStd-Bold.svg#RockwellStd-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+/*web fonts above HAVE TO BE FIRST!*/
+
+
 /* App-wide */
+*{
+	font-family: 'Rockwell';
+}
+
+div {
+	text-align: center;
+}
+
 .header {
 	background: url(../images/header.png);
 }
