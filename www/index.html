@@ -41,7 +41,7 @@ KEY
         <textarea id="specimen-list" class="x-hidden-display">
 {name}
         </textarea>        
-<div id="specimen" class="x-hidden-display">
+<textarea id="specimen" class="x-hidden-display">
 	{name}<br>
 	<div>
 		<img src="images/{photo_image}" width="200px">
@@ -50,19 +50,21 @@ KEY
 	<div>
 		{short_description}
 	</div>
-</div>
-<div id="multiSpecimen" class="x-hidden-display">
+</textarea>
+<textarea id="multiSpecimen" class="x-hidden-display">
 	{name}<br />
 	<img src="back.jpg" width="15" height="15" align="left" />
 	<img src="images/{photo_image}" align="left" width="200px">
 	<img src="forward.jpg" width="15" height="15" align="left" />
-</div>
-<div id="specimenDetail" class="x-hidden-display" style="padding:5px;">
+</textarea>
+<textarea id="specimenDetail" class="x-hidden-display" style="padding:5px;">
 	{description}
-	<div>
-		<img src="images/{drawing_image}" width="200px">
-	</div>
-</div>
+	<tpl for="drawing_image">
+		<div style="padding-top:5px;">
+			<img src="images/{.}" width="200px">
+		</div>
+	</tpl>
+</textarea>
 <textarea id="nav" class="x-hidden-display">
             {text}
         </textarea>

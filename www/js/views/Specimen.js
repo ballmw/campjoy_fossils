@@ -59,6 +59,8 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 	},
 	listeners : {
 		show : function() {
+			console.log('SPECIMEN SHOW EVENT FIRED');
+			
 			this.specimenDetailPanel.update(this.specimen);
 			
 			this.scroller.scrollTo({x:0, y:0});
@@ -72,12 +74,12 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			
 			var toggleImagePanel = new Ext.Panel({
 				width: 200,
-				html: '<img src="images/' + this.specimen.photo_image[0] + '" height="120" width="200px" />'
+				html: '<img id="imgSpecimen" src="images/' + this.specimen.photo_image[0] + '" height="120" width="200px" />'
 			});
 			
 			if (typeof(this.specimen.photo_image) == 'string' || this.specimen.photo_image.length === 1) {
 				this.specimenPanel.add({
-					html: '<img src="images/' + ((this.specimen.photo_image.length === 1) ? this.specimen.photo_image[0] : this.specimen.photo_image) + '" width="200px" />'
+					html: '<img id="imgSpecimen" src="images/' + ((this.specimen.photo_image.length === 1) ? this.specimen.photo_image[0] : this.specimen.photo_image) + '" width="200px" />'
 				});
 			}
 			else {
@@ -91,8 +93,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 						currentImageIndex = imageCount - 1;
 					}
 					currentImageIndex %= imageCount;
-					toggleImagePanel.update('<img src="images/' + me.specimen.photo_image[currentImageIndex] + '" height="120" width="200px" />');
-					me.specimenPanel.doComponentLayout();
+					Ext.fly('imgSpecimen').dom.src = 'images/' + me.specimen.photo_image[currentImageIndex];
 				};
 				
 				this.specimenPanel.add(new Ext.Panel({
