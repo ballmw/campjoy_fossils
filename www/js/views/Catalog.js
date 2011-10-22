@@ -1,5 +1,6 @@
 App.views.Catalog = Ext.extend(Ext.Panel, {
     layout:'fit',
+    scroll:true,
     initComponent: function(){
       this.store = App.stores.Specimen;
 	    this.list = new Ext.List({
@@ -11,7 +12,7 @@ App.views.Catalog = Ext.extend(Ext.Panel, {
 	        title: this.title,
 	        store: this.store,
 	        emptyText: this.emptyText,
-	        itemTpl: new Ext.XTemplate('<div><h2>{name}</h2><h3>{description}</h3></div>')
+	        itemTpl: Ext.XTemplate.from('specimen-list')
 	    });
 	    this.items = [this.list];
 	    App.views.Catalog.superclass.initComponent.call(this);

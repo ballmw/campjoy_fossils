@@ -14,12 +14,14 @@
 <script src="js/sencha-touch-debug-w-comments.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
 <script src="js/config.js" type="text/javascript"></script>
+<script src="js/model/fossil.js" type="text/javascript"></script>
 <script src="js/views/PhoneApp.js" type="text/javascript"></script>
 <script src="js/views/WindowApp.js" type="text/javascript"></script>
 <script src="js/views/Home.js" type="text/javascript"></script>
 <script src="js/views/DichotemousKey.js" type="text/javascript"></script>
 <script src="js/views/Catalog.js" type="text/javascript"></script>
 <script src="js/views/Specimen.js" type="text/javascript"></script>
+<script src="js/model/fossil.js" type="text/javascript"></script>
 <script src="js/model/Question.js" type="text/javascript"></script>
 <script src="js/model/Specimen.js" type="text/javascript"></script>
 </head>
@@ -33,10 +35,20 @@ CATALOG
   <textarea id="key" class="x-hidden-display">
 KEY
         </textarea>
+        <textarea id="specimen-list" class="x-hidden-display">
+{name}
+        </textarea>        
   <textarea id="specimen" class="x-hidden-display">
 I am a specimen.<br>
 Name : {name}<br>
 Description : {description}
+<div>
+<img src="images/{photo_image}" width="200px">
+</div>
+<div>
+<img src="images/{drawing_image}" width="200px">
+</div>
+
         </textarea>        
 <textarea id="nav" class="x-hidden-display">
             {text}

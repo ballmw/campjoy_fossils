@@ -29,26 +29,37 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 	navTo : function(dest, params) {
 		var index = 0;
 		var showTabBar = true;
+		var view = this.homeView;
 		switch (dest.toLowerCase()) {
+
 			case 'home':
-				showTabBar = false;
-				this.setActiveItem(this.homeView)
+				showTabBar = true;
+				view = this.homeView;
 				break;
 			case 'key':
 				showTabBar = false;
-				this.setActiveItem(this.keyView)
+				view = this.keyView;
 				break;
 			case 'catalog':
-				showTabBar = false;
-				this.setActiveItem(this.catalogView);
+				showTabBar = true;
+				view = this.catalogView;
 				break;
 			case 'specimen':
 				showTabBar = false;
 				this.specimenView.specimen = params;
-				this.setActiveItem(this.specimenView);
+				view = this.specimenView;
 				break;
 		}
-		this.tabBar[(showTabBar) ? 'show' : 'hide'](true);
+		//this.tabBar[(showTabBar) ? 'show' : 'hide'](true);
+		if(showTabBar)
+			this.tabBar.show(true);
+		else {
+			//this.tabBar.hide(true);
+		}
+        this.doComponentLayout();
+		this.setActiveItem(view);
+		this.doComponentLayout();
+		
 
 	},
 	initComponent : function() {

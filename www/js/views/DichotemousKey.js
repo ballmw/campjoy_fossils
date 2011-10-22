@@ -25,7 +25,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 	},
 	listeners : {
 		show : function() {
-			App.viewport.hideTabBar();
+			//App.viewport.hideTabBar();
 			// tabBar.hide();
 		}
 	}
