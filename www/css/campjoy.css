@@ -1,0 +1,53 @@
+
+div {
+	text-align: center;
+}
+
+.header {
+	background: url(../images/header.png);
+}
+
+.footer {
+	background: url(../images/footer.png);
+}
+
+.main {
+	background: url(../images/background.png);
+}
+
+
+.homeContainer {
+	display: table;
+	height: 350px;
+	#position: relative;
+	overflow: hidden;
+}
+.homeAbsolute {
+	#position: absolute;
+	#top: 50%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.homeRelative {
+	#position: relative;
+	width:100%;
+	margin-left:75px;
+	#top: -50%;
+}
+.homeCircle {
+	text-align:center;
+	height:150px;
+	width:150px;
+	border-radius: 100px;
+	border: solid 2px black;
+	background-color:#fff;
+}
+
+.key-item {
+	height: 135px;
+	width: 100%;
+	margin: 0px;
+	padding: 25px 0;
+	background: none;
+	font-family: Courier;
+}
