@@ -58,8 +58,14 @@
 	width:150px;
 	border-radius: 100px;
 	border: solid 2px black;
-	background-image:url('../images/start_image.jpg');        
+	background-image:url('../images/start_image.jpg'); 
+        text-shadow: 0 0 0.2em #FF9,  0 0 0.2em #FF9
 }
+
+.homeCircle:hover {
+        text-shadow: 0 0 0.2em #BA4809,  0 0 0.2em #BA4809
+}
+
 
 /* Dichotomous Key */
 .key-item {
