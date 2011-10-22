@@ -20,7 +20,7 @@ App.views.Home = Ext.extend(Ext.Panel, {
   },
   listeners: {
   	afterlayout: function(){
-		this.body.on('click', function(){
+		this.body.on('touchstart', function(){
 			App.viewport.navTo('key');
 		});
   	}

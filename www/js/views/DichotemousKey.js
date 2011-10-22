@@ -103,7 +103,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 	
 	bindOurEvents: function()
 	{
-		$('.key-option').click( function(event) {
+		$('.key-option').bind('click touchstart', function(event) {
 				var nextStatementId = event.target.getAttribute('data-selectedoption');
 				if(nextStatementId == false){
 					var specimenIndex = event.target.getAttribute('data-index');
