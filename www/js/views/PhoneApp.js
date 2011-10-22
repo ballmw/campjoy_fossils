@@ -68,12 +68,13 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 	},
 	initComponent : function() {
 		// console.log('init PhoneApp');
-		this.homeView = new App.views.Home();
+		
 		this.keyView = new App.views.DichotemousKey();
 		this.catalogView = new App.views.Catalog();
 		this.aboutView = new App.views.About();
 		this.specimenView = new App.views.Specimen();
-
+        this.homeView = new App.views.Home();
+		
 		this.items = [this.homeView, this.catalogView, this.specimenView, this.aboutView, this.keyView];
 
 		this.tabBar = new Ext.TabBar({
