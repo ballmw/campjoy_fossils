@@ -3,9 +3,6 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
   cls : 'customPanel',
   fullscreen : true,
   scroll : true,
-  tbar: {
-  	
-  },
   initComponent : function() {
     this.tpl = Ext.XTemplate.from('key');
     
