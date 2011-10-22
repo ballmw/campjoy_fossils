@@ -70,13 +70,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 	initComponent : function() {
 		// console.log('init PhoneApp');
 		
-		this.keyView = new App.views.DichotemousKey();
-		this.catalogView = new App.views.Catalog();
-		//this.aboutView = new App.views.About();
-		this.specimenView = new App.views.Specimen();
-        this.homeView = new App.views.Home();
 		
-		this.items = [this.homeView, this.catalogView, this.specimenView, this.keyView];//this.aboutView,
 
 		this.tabBar = new Ext.TabBar({
 			dock : 'bottom',
@@ -119,6 +113,14 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 
 		this.dockedItems = [this.tabBar];
 		//, this.specimenView
+
+        this.keyView = new App.views.DichotemousKey();
+		this.catalogView = new App.views.Catalog();
+		//this.aboutView = new App.views.About();
+		this.specimenView = new App.views.Specimen();
+        this.homeView = new App.views.Home();
+		
+		this.items = [this.homeView, this.catalogView, this.specimenView, this.keyView];//this.aboutView,
 
 		App.PhoneApp.superclass.initComponent.call(this);
 		console.log("initted PhoneApp");
