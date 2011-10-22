@@ -104,12 +104,11 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 	bindOurEvents: function()
 	{
 		$('.key-option').bind('click touchstart', function(event) {
-			var nextStatementId = event.target.getAttribute('data-selectedoption');
+			var specimenDiv = $(event.target).closest(".key-option")[0];
+			var nextStatementId = specimenDiv.getAttribute('data-selectedoption');
+			
 			if (!nextStatementId) {
-				nextStatementId = event.target.parentElement.getAttribute('data-selectedoption');
-			}
-			if (!nextStatementId) {
-				var specimenIndex = event.target.getAttribute('data-index');
+				var specimenIndex = specimenDiv.getAttribute('data-index'); //event.target.getAttribute('data-index');
 				//if(App.viewport.keyView.checkKeyAlreadyOnStack(-1) == false){
 					var specimen = App.viewport.keyView.getSpecimen(specimenIndex-1);
 					//App.viewport.keyView.gameStack.push([{key_pair: -1}]);	
