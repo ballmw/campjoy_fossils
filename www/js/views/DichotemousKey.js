@@ -88,7 +88,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 					if(App.viewport.keyView.checkKeyAlreadyOnStack(-1) == false){
 						var specimen = App.viewport.keyView.getSpecimen(specimenIndex-1);
 						App.viewport.keyView.gameStack.push([{key_pair: -1}]);	
-						App.viewport.keyView.update(specimen.name);
+						App.viewport.navTo('Specimen', specimen);
 					}
 					return;
 				}

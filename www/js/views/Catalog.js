@@ -23,7 +23,7 @@ App.views.Catalog = Ext.extend(Ext.Panel, {
     onItemTap: function(dv, index, item, e){
         var dataStore = dv.getStore();
         var record = dataStore.getAt(index).data;
-        App.viewport.navTo('Specimen', record);
+        App.viewport.navTo('specimen', record);
 //         
         // this.popup = new Ext.Panel({
             // floating: true,
