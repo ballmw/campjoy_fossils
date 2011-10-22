@@ -71,7 +71,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		this.aboutView = new App.views.About();
 		this.specimenView = new App.views.Specimen();
 
-		this.items = [this.homeView, this.keyView, this.catalogView, this.specimenView, this.aboutView];
+		this.items = [this.homeView, this.catalogView, this.specimenView, this.aboutView, this.keyView];
 
 		this.tabBar = new Ext.TabBar({
 			dock : 'bottom',
@@ -86,8 +86,11 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 			}, {
 				text : 'Key',
 				iconCls : 'maps',
+				scope : this,
 				handler : function() {
-					App.viewport.setActiveItem(App.viewport.keyView)
+					this.keyView.restartPage();
+					this.keyView.bindOurEvents();
+					this.setActiveItem(this.keyView);
 				}
 			}, {
 				text : 'Catalog',
