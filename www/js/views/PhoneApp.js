@@ -67,9 +67,10 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		this.homeView = new App.views.Home();
 		this.keyView = new App.views.DichotemousKey();
 		this.catalogView = new App.views.Catalog();
+		this.aboutView = new App.views.About();
 		this.specimenView = new App.views.Specimen();
 
-		this.items = [this.homeView, this.keyView, this.catalogView, this.specimenView];
+		this.items = [this.homeView, this.keyView, this.catalogView, this.specimenView, this.aboutView];
 
 		this.tabBar = new Ext.TabBar({
 			dock : 'bottom',
@@ -92,6 +93,11 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				iconCls : 'catalog',
 				handler : function() {
 					App.viewport.setActiveItem(App.viewport.catalogView)
+				}				
+			}, { text: 'About',
+				iconCls : 'about',
+				handler : function() {
+					App.viewport.setActiveItem(App.viewport.aboutView)
 				}
 			}],
 			layout : {
