@@ -20,7 +20,12 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 			    	App.viewport.keyView.update(questionHtml)
 				}
 			}
-		}]
+		}, {
+	  		text: 'Home',
+	  		handler: function(){
+	  			App.viewport.navTo('home');
+	  		}
+	  	}]
 	}],
 	//holds the selected data
 	gameStack: new Array(),

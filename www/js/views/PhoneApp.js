@@ -31,7 +31,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		var showTabBar = true;
 		switch (dest.toLowerCase()) {
 			case 'home':
-				showTabBar = false;
+				showTabBar = true;
 				this.setActiveItem(this.homeView)
 				break;
 			case 'key':
