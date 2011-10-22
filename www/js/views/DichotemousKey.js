@@ -10,7 +10,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 		cls: 'header',
 		items : [{
 			text : 'Back',
-			width: 100,
+			ui : 'back',
 			handler : function() {
 				if(App.viewport.keyView.gameStack.length == 1){
 					return;
@@ -25,7 +25,6 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 			}
 		},{xtype: 'spacer'}, {
 	  		text: 'Home',
-	  		width: 100,
 	  		handler: function(){
 	  			App.viewport.navTo('home');
 	  		}
@@ -106,7 +105,10 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 	{
 		$('.key-option').bind('click touchstart', function(event) {
 			var nextStatementId = event.target.getAttribute('data-selectedoption');
-			if(nextStatementId == false){
+			if (!nextStatementId) {
+				nextStatementId = event.target.parentElement.getAttribute('data-selectedoption');
+			}
+			if (!nextStatementId) {
 				var specimenIndex = event.target.getAttribute('data-index');
 				//if(App.viewport.keyView.checkKeyAlreadyOnStack(-1) == false){
 					var specimen = App.viewport.keyView.getSpecimen(specimenIndex-1);

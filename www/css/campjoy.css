@@ -1,12 +1,7 @@
-
-div {
-	text-align: center;
-}
-
+/* App-wide */
 .header {
 	background: url(../images/header.png);
 }
-
 .footer {
 	background: url(../images/footer.png);
 }
@@ -15,7 +10,7 @@ div {
 	background: url(../images/background.png);
 }
 
-
+/* Home view */
 .homeContainer {
 	display: table;
 	height: 350px;
@@ -43,7 +38,9 @@ div {
 	background-color:#fff;
 }
 
+/* Dichotomous Key */
 .key-item {
+	text-align: center;
 	height: 135px;
 	width: 100%;
 	margin: 0px;
