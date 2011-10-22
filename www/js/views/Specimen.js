@@ -15,7 +15,25 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 				App.viewport.navTo(App.viewport.specimenView.back_name);
 				App.viewport.tabBar.show();
 			}
-		},{xtype: 'spacer'}, {
+		},{
+			xtype: 'spacer'
+		},{
+			text : 'More Info',
+			width: 120,
+			handler: function(btn){
+				if (App.viewport.specimenView.specimenDetailPanel.hidden) {
+					App.viewport.specimenView.specimenDetailPanel.show();
+					btn.setText('Less Info');
+				}
+				else {
+					App.viewport.specimenView.specimenDetailPanel.hide();
+					btn.setText('More Info');
+				}
+				App.viewport.specimenView.doComponentLayout();
+			}
+		},{
+			xtype: 'spacer'
+		},{
 			text : 'Home',
 			handler : function() {
 				App.viewport.navTo('home');
@@ -34,25 +52,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			tpl: Ext.XTemplate.from('specimenDetail')
 		});
 		
-		var me = this;
-		
-		var showMoreButton = new Ext.Button({
-			text: 'More Info',
-			width: 120,
-			handler: function(btn){
-				if (me.specimenDetailPanel.hidden) {
-					me.specimenDetailPanel.show();
-					showMoreButton.setText('Less Info');
-				}
-				else {
-					me.specimenDetailPanel.hide();
-					showMoreButton.setText('More Info');
-				}
-				me.doComponentLayout();
-			}
-		});
-		
-		this.items = [this.specimenPanel, this.specimenDetailPanel, showMoreButton];
+	    this.items = [this.specimenPanel, this.specimenDetailPanel];
 		
 		App.views.Specimen.superclass.initComponent.call(this);
 	},
