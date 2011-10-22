@@ -45,6 +45,10 @@ KEY
 	<div>
 		<img src="images/{photo_image}" width="200px">
 	</div>
+	<br />
+	<div>
+		{short_description}
+	</div>
 </div>
 <div id="specimenDetail" class="x-hidden-display" style="padding:5px;">
 	{description}
@@ -78,7 +82,7 @@ KEY
 <textarea id="keyOptions" class="x-hidden-display">
 	<tpl for=".">
 		<div id="options{#}" class="key-option key-item" data-selectedoption="{next_statement_pair}" data-index="{#}">
-           <img src="images/{help_image}" width="200px">
+           <img src="images/{help_image}">
            <br />{statement}
         </div>
         <tpl if="xindex < xcount">

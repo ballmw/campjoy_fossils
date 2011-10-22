@@ -21,14 +21,9 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			text : 'More Info',
 			width: 120,
 			handler: function(btn){
-				if (App.viewport.specimenView.specimenDetailPanel.hidden) {
-					App.viewport.specimenView.specimenDetailPanel.show();
-					btn.setText('Less Info');
-				}
-				else {
-					App.viewport.specimenView.specimenDetailPanel.hide();
-					btn.setText('More Info');
-				}
+				App.viewport.specimenView.specimenDetailPanel.setWidth(App.viewport.modalWidth);
+				App.viewport.specimenView.specimenDetailPanel.setHeight(App.viewport.modalHeight);					
+				App.viewport.specimenView.specimenDetailPanel.show();
 				App.viewport.specimenView.doComponentLayout();
 			}
 		},{
@@ -46,13 +41,18 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 		this.specimenPanel = new Ext.Panel({
 			tpl: Ext.XTemplate.from('specimen')
 		});
-		
+		//modal window
 		this.specimenDetailPanel = new Ext.Panel({
 			hidden: true,
-			tpl: Ext.XTemplate.from('specimenDetail')
-		});
-		
-	    this.items = [this.specimenPanel, this.specimenDetailPanel];
+			tpl: Ext.XTemplate.from('specimenDetail'),
+		    floating: true,
+            modal: true,
+            centered: true,
+            scroll: true,
+            styleHtmlContent: true
+      	});
+      	
+		this.items = [this.specimenPanel];
 		
 		App.views.Specimen.superclass.initComponent.call(this);
 	},
