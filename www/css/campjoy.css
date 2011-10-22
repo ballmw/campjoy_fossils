@@ -31,7 +31,7 @@ div {
 	background: url(../images/footer.png);
 }
 
-.main {
+.main, .customPanel {
 	background: url(../images/background.png);
 }
 
@@ -66,11 +66,20 @@ div {
 /* Dichotomous Key */
 .key-item {
 	text-align: center;
-	height: 135px;
 	width: 100%;
 	margin: 0px;
-	padding: 25px 0;
+	padding: 15px 0;
 	background: none;
 	font-family: Courier;
 	color: #27221b;
+}
+
+.key-option-or {
+        text-align: center;
+        width: 100%;
+        margin: 0px;
+}
+
+.key-item img{
+       height: 80px;
 }
