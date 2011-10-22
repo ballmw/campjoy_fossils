@@ -6,13 +6,13 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 	modalWidth : 300,
 	modalHeight : 300,
 	cls: 'main',
-	tabBar : {
+	/*tabBar : {
 		dock : 'bottom',
 		ui : 'dark',
 		layout : {
 			pack : 'center'
 		}
-	},
+	},*/
 	cardSwitchAnimation : {
 		type : 'slide',
 		cover : true
@@ -36,6 +36,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 			case 'home':
 				showTabBar = true;
 				view = this.homeView;
+                                view.restartPage();
 				break;
 			case 'key':
 				showTabBar = false;
@@ -60,21 +61,16 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		else {
 			//this.tabBar.hide(true);
 		}
-        this.doComponentLayout();
+        //this.doComponentLayout();
 		this.setActiveItem(view);
-		this.doComponentLayout();
+		//this.doComponentLayout();
 		
 
 	},
 	initComponent : function() {
 		// console.log('init PhoneApp');
-		this.homeView = new App.views.Home();
-		this.keyView = new App.views.DichotemousKey();
-		this.catalogView = new App.views.Catalog();
-		this.aboutView = new App.views.About();
-		this.specimenView = new App.views.Specimen();
-
-		this.items = [this.homeView, this.catalogView, this.specimenView, this.aboutView, this.keyView];
+		
+		
 
 		this.tabBar = new Ext.TabBar({
 			dock : 'bottom',
@@ -102,12 +98,14 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				handler : function() {
 					App.viewport.setActiveItem(App.viewport.catalogView)
 				}				
-			}, { text: 'About',
-				iconCls : 'about',
-				handler : function() {
-					App.viewport.setActiveItem(App.viewport.aboutView)
-				}
-			}],
+			}
+			//, { text: 'About',
+			//	iconCls : 'about',
+			//	handler : function() {
+			//		App.viewport.setActiveItem(App.viewport.aboutView)
+			//	}
+			//}
+			],
 			layout : {
 				pack : 'center'
 			}
@@ -115,6 +113,14 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 
 		this.dockedItems = [this.tabBar];
 		//, this.specimenView
+
+        this.keyView = new App.views.DichotemousKey();
+		this.catalogView = new App.views.Catalog();
+		//this.aboutView = new App.views.About();
+		this.specimenView = new App.views.Specimen();
+        this.homeView = new App.views.Home();
+		
+		this.items = [this.homeView, this.catalogView, this.specimenView, this.keyView];//this.aboutView,
 
 		App.PhoneApp.superclass.initComponent.call(this);
 		console.log("initted PhoneApp");
