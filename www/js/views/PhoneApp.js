@@ -6,13 +6,13 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 	modalWidth : 300,
 	modalHeight : 300,
 	cls: 'main',
-	tabBar : {
+	/*tabBar : {
 		dock : 'bottom',
 		ui : 'dark',
 		layout : {
 			pack : 'center'
 		}
-	},
+	},*/
 	cardSwitchAnimation : {
 		type : 'slide',
 		cover : true
@@ -61,9 +61,9 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		else {
 			//this.tabBar.hide(true);
 		}
-        this.doComponentLayout();
+        //this.doComponentLayout();
 		this.setActiveItem(view);
-		this.doComponentLayout();
+		//this.doComponentLayout();
 		
 
 	},
@@ -72,11 +72,11 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		
 		this.keyView = new App.views.DichotemousKey();
 		this.catalogView = new App.views.Catalog();
-		this.aboutView = new App.views.About();
+		//this.aboutView = new App.views.About();
 		this.specimenView = new App.views.Specimen();
         this.homeView = new App.views.Home();
 		
-		this.items = [this.homeView, this.catalogView, this.specimenView, this.aboutView, this.keyView];
+		this.items = [this.homeView, this.catalogView, this.specimenView, this.keyView];//this.aboutView,
 
 		this.tabBar = new Ext.TabBar({
 			dock : 'bottom',
@@ -104,12 +104,14 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				handler : function() {
 					App.viewport.setActiveItem(App.viewport.catalogView)
 				}				
-			}, { text: 'About',
-				iconCls : 'about',
-				handler : function() {
-					App.viewport.setActiveItem(App.viewport.aboutView)
-				}
-			}],
+			}
+			//, { text: 'About',
+			//	iconCls : 'about',
+			//	handler : function() {
+			//		App.viewport.setActiveItem(App.viewport.aboutView)
+			//	}
+			//}
+			],
 			layout : {
 				pack : 'center'
 			}
