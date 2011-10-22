@@ -74,11 +74,12 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 		return selected.next_statement_pair;
 	},
 	initComponent : function() {
-		App.views.DichotemousKey.superclass.initComponent.call(this);
 		this.startGame();
 		var questions = this.seekTopGameStack();
 		var questionHtml = this.getQuestionHtml(questions);
 		this.html = questionHtml;
+
+		App.views.DichotemousKey.superclass.initComponent.call(this);
 	},
 	
 	getSpecimen: function(index){
@@ -91,31 +92,35 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 			console.log('afterlayout fired');
 			this.bindOurEvents();
 		},
-		show : function()
-		{
+		show : function() {
 			console.log('show');
 			this.bindOurEvents();
 		}
 	},
 	transitionPage: function(){
-		App.viewport.keyView.update('<div class="transition-key"> Analyzing </div> ');
+		App.viewport.keyView.update('<div class="transition-key"> ... </div> ');
 	},
 	
-	bindOurEvents: function()
-	{
-		$('.key-option').bind('click touchstart', function(event) {
+	bindOurEvents: function() {
+		$('.key-option').bind('touchstart mousedown', function(event) {
+			var specimenDiv = $(event.target).closest(".key-option")[0];
+			
+			$(specimenDiv).css('background-color', '#888');
+		});
+		
+		$('.key-option').bind('touchend mouseup', function(event) {
 			var specimenDiv = $(event.target).closest(".key-option")[0];
 			var nextStatementId = specimenDiv.getAttribute('data-selectedoption');
 			
+			$(specimenDiv).css('background-color', '');
+			
 			if (!nextStatementId) {
-				var specimenIndex = specimenDiv.getAttribute('data-index'); //event.target.getAttribute('data-index');
-				//if(App.viewport.keyView.checkKeyAlreadyOnStack(-1) == false){
-					var specimen = App.viewport.keyView.getSpecimen(specimenIndex-1);
-					//App.viewport.keyView.gameStack.push([{key_pair: -1}]);	
-					App.viewport.navTo('specimen', specimen, 'key');
-				//}
+				var specimenIndex = specimenDiv.getAttribute('data-index');
+				var specimen = App.viewport.keyView.getSpecimen(specimenIndex-1);
+				App.viewport.navTo('specimen', specimen, 'key');
 				return;
 			}
+			
 			//tranisition
 			App.viewport.keyView.transitionPage();
 				
@@ -125,6 +130,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 			if(App.viewport.keyView.checkKeyAlreadyOnStack(nextStatementId) == false){
 				App.viewport.keyView.gameStack.push(questions);	
 			}
+			
 			App.viewport.keyView.updatePage(questions);
 		});
 	}
