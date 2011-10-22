@@ -6,6 +6,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 	dockedItems : [{
 		xtype : 'toolbar',
 		ui : 'light',
+		cls: 'header',
 		items : [{
 			text : 'Back',
 			ui : 'back',
@@ -14,7 +15,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 				App.viewport.navTo(App.viewport.specimenView.back_name);
 				App.viewport.tabBar.show();
 			}
-		}, {
+		},{xtype: 'spacer'}, {
 			text : 'Home',
 			handler : function() {
 				App.viewport.navTo('home');

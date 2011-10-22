@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Rockwell';
     src: url('../fonts/RockwellStd.otf') format('opentype'), url('../fonts/RockwellStd.svg#RockwellStd') format('svg');
@@ -11,7 +12,10 @@
     font-weight: bold;
     font-style: normal;
 }
+/*web fonts above HAVE TO BE FIRST!*/
 
+
+/* App-wide */
 *{
 	font-family: 'Rockwell';
 }
@@ -23,7 +27,6 @@ div {
 .header {
 	background: url(../images/header.png);
 }
-
 .footer {
 	background: url(../images/footer.png);
 }
@@ -32,7 +35,7 @@ div {
 	background: url(../images/background.png);
 }
 
-
+/* Home view */
 .homeContainer {
 	display: table;
 	height: 350px;
@@ -60,11 +63,14 @@ div {
 	background-color:#fff;
 }
 
+/* Dichotomous Key */
 .key-item {
+	text-align: center;
 	height: 135px;
 	width: 100%;
 	margin: 0px;
 	padding: 25px 0;
 	background: none;
 	font-family: Courier;
+	color: #27221b;
 }
