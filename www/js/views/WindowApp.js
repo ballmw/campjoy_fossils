@@ -69,7 +69,7 @@ App.WindowApp = Ext.extend(Ext.Panel, {
           dock : 'top',
           items : [ this.navigationButton ]
         });
-        console.log(App.orientation);
+        //console.log(App.orientation);
         this.dockedItems = App.orientation === 'landscape' ? [ this.navigationPanel ] : [ this.toolbar ];
         
         
@@ -87,7 +87,7 @@ App.WindowApp = Ext.extend(Ext.Panel, {
         this.displayLandscape();
       },
       onNavButtonTap : function() {
-        console.log('show nav panel');
+        //console.log('show nav panel');
         this.navigationPanel.showBy(this.navigationButton, 'fade');
       },
       onMenuSelect : function(dv, index, item, e) {
@@ -100,7 +100,7 @@ App.WindowApp = Ext.extend(Ext.Panel, {
       },
       
       displayPortrait : function() {
-        console.log('displayPortrait');
+        //console.log('displayPortrait');
         this.navigationPanel.setFloating(true);
         this.navigationPanel.setHeight(215);
         this.navigationPanel.addCls('portraitNav');
@@ -109,7 +109,7 @@ App.WindowApp = Ext.extend(Ext.Panel, {
         this.insertDocked(0, this.toolbar);
       },
       displayLandscape : function() {
-        console.log('displayLandscape');
+        //console.log('displayLandscape');
         this.navigationPanel.setFloating(false);
         this.navigationPanel.removeCls('portraitNav');
         this.navigationPanel.setHeight(window.innerHeight - 1);
