@@ -65,7 +65,7 @@
     },
     TIMELINE2: {
       name: "Cincinnatian Timeline",
-      photo_image: "timeline.png",
+      photo_image: "timeline2.png",
       drawing_image: [""],
       description: "",
       short_description: ""
@@ -80,7 +80,7 @@
     }, {
       key_pair: 1,
       statement: "The fossil does not resemble a modern day seashell",
-      help_image: "1a_seashell_x.png",
+      help_image: "1b_seashell.png",
       next_statement_pair: 3
     }, {
       key_pair: 2,
