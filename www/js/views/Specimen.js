@@ -57,10 +57,11 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 		
 		App.views.Specimen.superclass.initComponent.call(this);
 	},
+	refresh: function(){
+		this.specimenPanel.doLayout();
+	},
 	listeners : {
 		show : function() {
-			console.log('SPECIMEN SHOW EVENT FIRED');
-			
 			this.specimenDetailPanel.update(this.specimen);
 			
 			this.scroller.scrollTo({x:0, y:0});
@@ -72,14 +73,9 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 				html: this.specimen.name
 			});
 			
-			var toggleImagePanel = new Ext.Panel({
-				width: 200,
-				html: '<img id="imgSpecimen" src="images/' + this.specimen.photo_image[0] + '" height="120" width="200px" />'
-			});
-			
 			if (typeof(this.specimen.photo_image) == 'string' || this.specimen.photo_image.length === 1) {
 				this.specimenPanel.add({
-					html: '<img id="imgSpecimen" src="images/' + ((this.specimen.photo_image.length === 1) ? this.specimen.photo_image[0] : this.specimen.photo_image) + '" width="200px" />'
+					html: '<img id="imgSpecimen" onload="App.viewport.specimenView.refresh();" src="images/' + ((this.specimen.photo_image.length === 1) ? this.specimen.photo_image[0] : this.specimen.photo_image) + '" width="200px" />'
 				});
 			}
 			else {
@@ -108,7 +104,10 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 							handler: function(){
 								toggleImage(-1);
 							}
-						}), toggleImagePanel, new Ext.Button({
+						}), new Ext.Panel({
+								width: 200,
+								html: '<img id="imgSpecimen" onload="App.viewport.specimenView.refresh();" src="images/' + this.specimen.photo_image[0] + '" height="120" width="200px" />'
+							}), new Ext.Button({
 							text: '&gt;',
 							height: 30,
 							padding:4,
