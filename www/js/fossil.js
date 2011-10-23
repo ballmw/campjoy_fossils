@@ -84,7 +84,6 @@
       next_statement_pair: 3
     }, {
       key_pair: 2,
-      help: "Visually divide the shell in half across the top from the back hindge to front opening.",
       statement: "The right and left sides of the shell are mirror images of each other.",
       help_image: "2a_mirrored.png",
       specimen: specimens.BRACHIOPOD
