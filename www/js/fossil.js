@@ -2,14 +2,14 @@
   window.specimens = {
     PELECYPOD: {
       name: "PELECYPOD",
-      photo_image: "ambonychia_Pelecypod.png",
+      photo_image: "ambonychia_pelecypod.png",
       drawing_image: ["Pelecepod_anat.jpg"],
       description: "<b>Pelecypod</b> is an ancestor to modern clams, oysters, scallops, and mussels. These are all bivalved, meaning they have a shell composed of two hinged parts, or valves, held together by internal muscles. Pelecypods relax their hinge muscles to open their shells. The shell of the Pelecypod is made of aragonite calcium carbonate. This differs from the Brachiopod's mineral calcium carbonate and made the Pelecypod shell less likely to be preserved. Pelecypods attached themselves to the ocean floor by means of an internal foot. They also had fringing tentacles for gathering food.",
       short_description: "Pelecypod is an ancestor to modern clams, oysters, scallops, and mussels. These are all bivalved, meaning they have a shell composed of two hinged parts, or valves."
     },
     BRACHIOPOD: {
       name: "BRACHIOPOD",
-      photo_image: ["glyptorthis_Brachiopod.png", "holtedahlina_Brachiopod.png", "sowerbyella_brachiopod.png", "strpohomena_Brachiopod_outer_shell.png", "Brachiopod_strpohomena_pic_2.jpg", "Brachiopod_strpohomena_pic_3.jpg", "trematis_Brachiopod.png", "zygospira_modesta_brachiopod.png"],
+      photo_image: ["glyptorthis_brachiopod.png", "holtedahlina_brachiopod.png", "sowerbyella_brachiopod.png", "strpohomena_brachiopod_outer_shell.png", "Brachiopod_strpohomena_pic_2.jpg", "Brachiopod_strpohomena_pic_3.jpg", "trematis_Brachiopod.png", "zygospira_modesta_brachiopod.png"],
       drawing_image: ["Brachiopod_anat.jpg"],
       description: "<b>Brachiopods</b> are relatively simple organisms. They have a soft body enclosed in two shells that can be opened for feeding.  Each brachiopod valve (the top and bottom shell halves) is bilaterally symmetrical from the center of the hinge to the point of the shell opening opposite to the hinge. That is, each brachiopod valve can be divided in two from hinge to front, and the halves are mirror images of each other. However the top and bottom valves are not mirror images of each other. It has a feeding apparatus, called a lothophore, that strains food particles from the water and channels them to a mouth and digestive tract. There is also a weak heart-like organ that pumps blood through the body cavity. However, the brachiopod takes up most of its oxygen directly from the surrounding sea, particularly through the lothophore. The brachiopod is distinguished by an organ that is used to anchor it to the ocean floor. It is called the 'pedicle' and is a fleshy, muscular stock or 'foot'. The pedicle could be inserted into the bottom mud and secured with the aid of a mucus-like secretion.",
       short_description: "Brachiopods are relatively simple organisms. They have a soft body enclosed in two shells that can be opened for feeding."
