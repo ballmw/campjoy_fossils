@@ -70,11 +70,14 @@ KEY
 <textarea id="keyOptions" class="x-hidden-display">
 	<tpl for=".">
 		<div id="options{#}" class="key-option key-item" data-selectedoption="{next_statement_pair}" data-index="{#}">
+			<tpl if="help">
+				{help}<br />
+			</tpl>
            <img src="images/{help_image}">
            <br />{statement}
         </div>
         <tpl if="xindex < xcount">
-        	<div class="key-option-or">OR</div>	
+        	<div class="key-option-or">- or -</div>	
         </tpl>
 	</tpl>
 </textarea>

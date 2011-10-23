@@ -83,11 +83,13 @@
 }
 
 .key-option-or {
-        text-align: center;
-        width: 100%;
-        margin: 0px;
+	text-align: center;
+	width: 100%;
+	margin: 0px;
+	font-style: italic;
+	font-size: 12px;
 }
 
 .key-item img{
-       height: 80px;
+    height: 80px;
 }
