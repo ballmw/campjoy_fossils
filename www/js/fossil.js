@@ -4,8 +4,8 @@
       name: "PELECYPOD",
       photo_image: "ambonychia_Pelecypod.png",
       drawing_image: ["Pelecepod_anat.jpg"],
-      description: "<b>Pelecypod</b> is an ancestor to modern clams, oysters, scallops, and mussels. These are all bibivalved, meaning they have a shell composed of two hinged parts, or valves, held together by internal muscles. Pelecypods relax their hinge muscles to open their shells. The shell of the Pelecypod is made of aragonite calcium carbonate. This differs from the Brachiopod's mineral calcium carbonate and made the Pelecypod shell less likely to be preserved. Pelecypods attached themselves to the ocean floor by means of an internal foot. They also had fringing tentacles for gathering food.",
-      short_description: "Pelecypod is an ancestor to modern clams, oysters, scallops, and mussels. These are all bibivalved, meaning they have a shell composed of two hinged parts, or valves."
+      description: "<b>Pelecypod</b> is an ancestor to modern clams, oysters, scallops, and mussels. These are all bivalved, meaning they have a shell composed of two hinged parts, or valves, held together by internal muscles. Pelecypods relax their hinge muscles to open their shells. The shell of the Pelecypod is made of aragonite calcium carbonate. This differs from the Brachiopod's mineral calcium carbonate and made the Pelecypod shell less likely to be preserved. Pelecypods attached themselves to the ocean floor by means of an internal foot. They also had fringing tentacles for gathering food.",
+      short_description: "Pelecypod is an ancestor to modern clams, oysters, scallops, and mussels. These are all bivalved, meaning they have a shell composed of two hinged parts, or valves."
     },
     BRACHIOPOD: {
       name: "BRACHIOPOD",
