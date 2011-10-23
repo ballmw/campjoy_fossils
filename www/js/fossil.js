@@ -16,7 +16,7 @@
     },
     TRILOBYTE: {
       name: "TRILOBYTE",
-      photo_image: ["Trilobite.png", "Trilobite1.jpg"],
+      photo_image: ["Trilobite.png", "Trilobite1.png"],
       drawing_image: ["Trilobite_anat.jpg"],
       description: "<b>Trilobites</b> are extinct members of the Arthropod family which were quite common. Fossils of these creatures, although plentiful, are sometimes difficult to find.  They are most often found 'enrolled' (rolled in a ball). This may have been a way of defending themselves from predators (such as the cephalopod) or from severe storms that often ravaged the Ordovician Sea. Many died in this position and were found 440 million years later as fossils. One possible reason why they are more commonly found enrolled than outstretched is that they hold together as fossils better than ones that are buried in prone positions. The body and appendages of a Trilobite are encased in and exoskeleton made of protein chitin. The exoskeleton is like a suit of armor with rigid parts articulated by flexible joints. Trilobites are classified as arthropods, which literally means 'jointed legs.' Arthropods grow by periodically shedding their exoskeletons and forming new skin. These shed exoskeletons, called molts, are sometimes the fossil remains and may partly explain the abundance of trilobite fossils. There are 16 genera of Trilobites from the Cincinnati series. They were thought to have actively hunted prey buried in the sediment, based on their leg structure and chewing mouth parts.",
       short_description: "Trilobites are extinct members of the Arthropod family. The body and appendages of a Trilobite are encased in and exoskeleton made of protein chitin."
