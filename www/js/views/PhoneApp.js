@@ -50,6 +50,9 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				break;
 			case 'specimen':
 				showTabBar = false;
+				if (this.specimenView == undefined)
+				  this.specimenView = new App.views.Specimen();
+				  this.add(this.specimenView);
 				this.specimenView.specimen = params;
 				this.specimenView.back_name = back_name;
 				view = this.specimenView;
@@ -117,16 +120,21 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
         this.keyView = new App.views.DichotemousKey();
 		this.catalogView = new App.views.Catalog();
 		//this.aboutView = new App.views.About();
-		this.specimenView = new App.views.Specimen();
+		
         this.homeView = new App.views.Home();
 		
-		this.items = [this.homeView, this.catalogView, this.specimenView, this.keyView];//this.aboutView,
+		this.items = [this.homeView, this.catalogView, this.keyView];//this.aboutView,
 
 		App.PhoneApp.superclass.initComponent.call(this);
 		console.log("initted PhoneApp");
-	},
+		for(var prop in window.specimens) {
+			if(window.specimens.hasOwnProperty(prop))
+				App.stores.Specimen.add(window.specimens[prop]);
+		}
+	}
+	/*,
 	displayPortrait : function() {
 	},
 	displayLandscape : function() {
-	}
+	}*/
 });
