@@ -20,12 +20,25 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 		},{
 			text : 'More Info',
 			width: 120,
+			scope:this,
 			handler: function(btn){
 				//App.viewport.specimenView.specimenDetailPanel.setWidth(App.viewport.modalWidth);
 				//App.viewport.specimenView.specimenDetailPanel.setHeight(App.viewport.modalHeight);
-				App.viewport.specimenView.specimenDetailPanel.show();
-				App.viewport.specimenView.specimenDetailPanel.scroller.scrollTo({x:0,y:0});					
-				App.viewport.specimenView.doComponentLayout();
+				var specimenDetailPanel = new Ext.Panel({
+			hidden: true,
+			tpl: Ext.XTemplate.from('specimenDetail'),
+		    floating: true,
+            modal: true,
+            centered: true,
+            scroll: true,
+            styleHtmlContent: true
+      	});
+      	specimenDetailPanel.update(App.viewport.specimenView.specimen);
+      	specimenDetailPanel.setWidth(App.viewport.modalWidth);
+      	specimenDetailPanel.setHeight(App.viewport.modalHeight);
+				specimenDetailPanel.show();
+				//App.viewport.specimenView.specimenDetailPanel.scroller.scrollTo({x:0,y:0});					
+				//App.viewport.specimenView.doComponentLayout();
 			}
 		},{
 			xtype: 'spacer'
@@ -43,17 +56,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			//scroll: true
 		});
 		//modal window
-		this.specimenDetailPanel = new Ext.Panel({
-			hidden: true,
-			tpl: Ext.XTemplate.from('specimenDetail'),
-		    floating: true,
-            modal: true,
-            centered: true,
-            scroll: true,
-            styleHtmlContent: true
-      	});
-      	this.specimenDetailPanel.setWidth(App.viewport.modalWidth);
-      	this.specimenDetailPanel.setHeight(App.viewport.modalHeight);
+		
 		this.items = [this.specimenPanel];
 		
 		App.views.Specimen.superclass.initComponent.call(this);
@@ -126,7 +129,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 		show : function() {
 			this.specimenPanel.removeAll();
 			
-			this.specimenDetailPanel.update(this.specimen);
+			
 			
 			// Bug fix: force scroll to the top
 			this.scroller.scrollTo({x:0, y:0});
