@@ -55,6 +55,20 @@
       drawing_image: ["HornCoral_anat_1.jpg", "HornCoral_anat_2.jpg"],
       description: "<b>Corals</b> are found today in great abundance and variety in marine rocks, and have existed as far back as the Cambrian period. 'Horn coral' or 'cup coral' resembles the modern sea-anemones but had a thick calcium carbonate skeleton (corallite), formed from its secretions. Horn Corals are part of a group of animals called Cnidaria (stinging tentacles). They had hollow, sack-like tentacles they used to grab food from the surrounding seawater. The fossil is only the corallite of the organism -- a skeleton without the flesh.",
       short_description: "Horn Corals are part of a group of animals called Cnidaria (stinging tentacles). They had hollow, sack-like tentacles they used to grab food from the surrounding seawater."
+    },
+    TIMELINE1: {
+      name: "Geological Timeline",
+      photo_image: "timeline1.png",
+      drawing_image: [""],
+      description: "",
+      short_description: ""
+    },
+    TIMELINE2: {
+      name: "Cincinnatian Timeline",
+      photo_image: "timeline.png",
+      drawing_image: [""],
+      description: "",
+      short_description: ""
     }
   };
   window.fossils_data = [
@@ -76,7 +90,6 @@
       specimen: specimens.BRACHIOPOD
     }, {
       key_pair: 2,
-      help: "Visually divide the shell in half across the top from the back hindge to front opening.",
       statement: " The right and left sides of the shell are not mirror images of each other.",
       help_image: "2b_not_mirrored.png",
       specimen: specimens.PELECYPOD
