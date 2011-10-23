@@ -32,7 +32,7 @@
       name: "CRINOID",
       photo_image: "crinoid.png",
       drawing_image: ["Crinoid_anat_1.jpg", "Crinoid_anat_2.jpg"],
-      description: "<b>Crinoids</b>, or 'sea lilies', are in the same taxonomic group as modern starfish , sand dollars, and sea cucumbers. Crinoids have persisted from the Ordovician period to the present, although the specific group found in these rocks disappeared at the end of the Permian period. Crinoids lived attached to the bottom of the sea by a long, flexible column and a root-like base. This column is the most common type of fossilized remain found from crinoids. The main part of the body, the calyx, at the upper end of the column, had arms that channeled food into the mouth on the upper surface of the calyx. Fossils showing the calyx and arms are rare. The hard structure of the animal was composed of plates of crystalline calcium carbonate.",
+      description: "<b>Crinoids</b>, or 'sea lilies', are in the same taxonomic group as modern starfish, sand dollars, and sea cucumbers. Crinoids have persisted from the Ordovician period to the present, although the specific group found in these rocks disappeared at the end of the Permian period. Crinoids lived attached to the bottom of the sea by a long, flexible column and a root-like base. This column is the most common type of fossilized remain found from crinoids. The main part of the body, the calyx, at the upper end of the column, had arms that channeled food into the mouth on the upper surface of the calyx. Fossils showing the calyx and arms are rare. The hard structure of the animal was composed of plates of crystalline calcium carbonate.",
       short_description: "Crinoids or, 'sea lilies' are in the same taxonomic group as modern starfish , sand dollars, and sea cucumbers. Crinoids have persisted from the Ordovician period to the present."
     },
     CEPHALOPOD: {
@@ -40,14 +40,14 @@
       photo_image: "cephalopod.png",
       drawing_image: ["Cephalopod_anat.jpg"],
       description: "<b>Cephalopod</b>, or 'head foot', looked as though its feet (actually tentacles) were growing out of its head. It was a distant relative of squids and octopus. Some grew as large as twelve feet in length. They were likely capable of rapid movement and may have had powerful grasping tentacles, strong beaks, good eyesight and strong shells. They were very likely the largest and most numerous predators of their time.",
-      short_description: "Cephalopod or, 'head foot' looked as though its feet (actually tentacles) were growing out of its head. It was a distant relative of squids and octopus."
+      short_description: "Cephalopod, or 'head foot', looked as though its feet (actually tentacles) were growing out of its head. It was a distant relative of squids and octopus."
     },
     GASTROPOD: {
       name: "GASTROPOD",
       photo_image: ["gastropod1.png", "gastropod2.png"],
       drawing_image: ["Gastropod_anat_1.jpg", "Gastropod_anat_2.jpg"],
       description: "<b>Gastropod</b> or, 'stomach foot' was the ancestor to the modern snail. After insects, snails  have the highest number of different species among all animals. Since the early Cambrian period, they have slowly but continuously increased in variety and importance up to present day. Certain forms have adapted to terrestrial life, but most are aquatic.",
-      short_description: "Gastropod or, 'stomach foot' was the ancestor to the modern snail. After insects, snails  have the highest number of different species among all animals."
+      short_description: "Gastropod, or 'stomach foot', was the ancestor to the modern snail. After insects, snails  have the highest number of different species among all animals."
     },
     HORNCORAL: {
       name: "HORN CORAL",
