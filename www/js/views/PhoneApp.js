@@ -123,10 +123,10 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		
         this.homeView = new App.views.Home();
 		
-		this.items = [this.homeView, this.catalogView, this.keyView];//this.aboutView,
+		this.items = [this.homeView, this.catalogView, this.keyView];
 
 		App.PhoneApp.superclass.initComponent.call(this);
-		console.log("initted PhoneApp");
+		//console.log("initted PhoneApp");
 		for(var prop in window.specimens) {
 			if(window.specimens.hasOwnProperty(prop))
 				App.stores.Specimen.add(window.specimens[prop]);

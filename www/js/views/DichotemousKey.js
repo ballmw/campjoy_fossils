@@ -89,11 +89,11 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 
 	listeners : {
 		afterlayout : function() { 
-			console.log('afterlayout fired');
+			//console.log('afterlayout fired');
 			this.bindOurEvents();
 		},
 		show : function() {
-			console.log('show');
+			//console.log('show');
 			this.bindOurEvents();
 		}
 	},
@@ -125,7 +125,7 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 			App.viewport.keyView.transitionPage();
 				
 			var nextStatementId = parseInt(nextStatementId);
-			console.log('next statement is ' + nextStatementId);
+			//console.log('next statement is ' + nextStatementId);
 			var questions = fossil_key.find_statement_pair(nextStatementId);
 			if(App.viewport.keyView.checkKeyAlreadyOnStack(nextStatementId) == false){
 				App.viewport.keyView.gameStack.push(questions);	
