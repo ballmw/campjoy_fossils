@@ -97,7 +97,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				}
 			}, {
 				text : 'Catalog',
-				iconCls : 'catalog',
+				iconCls : 'bookmark_black',
 				handler : function() {
 					App.viewport.setActiveItem(App.viewport.catalogView)
 				}				
