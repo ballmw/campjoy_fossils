@@ -46,7 +46,7 @@
       name: "GASTROPOD",
       photo_image: ["Gastropod1.png", "Gastropod2.png"],
       drawing_image: ["Gastropod_anat_1.jpg", "Gastropod_anat_2.jpg"],
-      description: "<b>Gastropod</b> or, 'stomach foot' was the ancestor to the modern snail. After insects, snails  have the highest number of different species among all animals. Since the early Cambrian period, they have slowly but continuously increased in variety and importance up to present day. Certain forms have adapted to terrestrial life, but must are aquatic.",
+      description: "<b>Gastropod</b> or, 'stomach foot' was the ancestor to the modern snail. After insects, snails  have the highest number of different species among all animals. Since the early Cambrian period, they have slowly but continuously increased in variety and importance up to present day. Certain forms have adapted to terrestrial life, but most are aquatic.",
       short_description: "Gastropod or, 'stomach foot' was the ancestor to the modern snail. After insects, snails  have the highest number of different species among all animals."
     },
     HORNCORAL: {
