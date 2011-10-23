@@ -125,6 +125,12 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			})]
 		});
 	},
+	getShortDescriptionHtml: function(){
+		if (!this.specimen.short_description) {
+			return '';
+		}
+		return '<br />' + (this.specimen.short_description || '');
+	},
 	listeners : {
 		show : function() {
 			this.specimenPanel.removeAll();
@@ -143,7 +149,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			
 			// short_description and any illustrations
 			this.specimenPanel.add({
-				html: '<br /><div style="padding-right:10px;">' + (this.specimen.short_description || '') + this.getIllustrationHtml() + '</div>'
+				html: '<div style="padding-right:10px;">' + this.getShortDescriptionHtml() + this.getIllustrationHtml() + '</div>'
 			});
 			
 			this.specimenPanel.doLayout();
