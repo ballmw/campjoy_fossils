@@ -36,45 +36,43 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 			case 'home':
 				showTabBar = true;
 				view = this.homeView;
-                                view.restartPage();
+                view.restartPage();
 				break;
 			case 'key':
 				showTabBar = false;
+				if (!this.keyView) {
+					this.keyView = new App.views.DichotemousKey();
+					this.add(this.keyView);
+				}
 				this.keyView.restartPage();
 				this.keyView.bindOurEvents();
 				view = this.keyView;
 				break;
 			case 'catalog':
 				showTabBar = true;
+				if (!this.catalogView) {
+					this.catalogView = new App.views.Catalog();
+					this.add(this.catalogView);
+				}
 				view = this.catalogView;
 				break;
 			case 'specimen':
 				showTabBar = false;
-				if (this.specimenView == undefined)
+				if (!this.specimenView) {
 				  this.specimenView = new App.views.Specimen();
-				  this.add(this.specimenView);
+					this.add(this.specimenView);
+				}
 				this.specimenView.specimen = params;
 				this.specimenView.back_name = back_name;
 				view = this.specimenView;
 				break;
 		}
-		//this.tabBar[(showTabBar) ? 'show' : 'hide'](true);
 		if(showTabBar)
 			this.tabBar.show(true);
-		else {
-			//this.tabBar.hide(true);
-		}
-        //this.doComponentLayout();
 		this.setActiveItem(view);
-		//this.doComponentLayout();
-		
-
 	},
 	initComponent : function() {
 		// console.log('init PhoneApp');
-		
-		
-
 		this.tabBar = new Ext.TabBar({
 			dock : 'bottom',
 			ui : 'dark',
@@ -91,15 +89,18 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				iconCls : 'maps',
 				scope : this,
 				handler : function() {
-					this.keyView.restartPage();
-					this.keyView.bindOurEvents();
-					this.setActiveItem(this.keyView);
+					this.navTo('key');
+					//this.keyView.restartPage();
+					//this.keyView.bindOurEvents();
+					//this.setActiveItem(this.keyView);
 				}
 			}, {
 				text : 'Catalog',
 				iconCls : 'bookmark_black',
+				scope : this,
 				handler : function() {
-					App.viewport.setActiveItem(App.viewport.catalogView)
+					this.navTo('catalog');
+					//App.viewport.setActiveItem(App.viewport.catalogView)
 				}				
 			}
 			//, { text: 'About',
@@ -115,15 +116,13 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		});
 
 		this.dockedItems = [this.tabBar];
-		//, this.specimenView
 
-        this.keyView = new App.views.DichotemousKey();
-		this.catalogView = new App.views.Catalog();
+        //this.keyView = new App.views.DichotemousKey();
 		//this.aboutView = new App.views.About();
 		
         this.homeView = new App.views.Home();
 		
-		this.items = [this.homeView, this.catalogView, this.keyView];
+		this.items = [this.homeView];
 
 		App.PhoneApp.superclass.initComponent.call(this);
 		//console.log("initted PhoneApp");
