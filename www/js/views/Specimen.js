@@ -21,8 +21,8 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			text : 'More Info',
 			width: 120,
 			handler: function(btn){
-				App.viewport.specimenView.specimenDetailPanel.setWidth(App.viewport.modalWidth);
-				App.viewport.specimenView.specimenDetailPanel.setHeight(App.viewport.modalHeight);
+				//App.viewport.specimenView.specimenDetailPanel.setWidth(App.viewport.modalWidth);
+				//App.viewport.specimenView.specimenDetailPanel.setHeight(App.viewport.modalHeight);
 				App.viewport.specimenView.specimenDetailPanel.show();
 				App.viewport.specimenView.specimenDetailPanel.scroller.scrollTo({x:0,y:0});					
 				App.viewport.specimenView.doComponentLayout();
@@ -52,7 +52,8 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
             scroll: true,
             styleHtmlContent: true
       	});
-      	
+      	this.specimenDetailPanel.setWidth(App.viewport.modalWidth);
+      	this.specimenDetailPanel.setHeight(App.viewport.modalHeight);
 		this.items = [this.specimenPanel];
 		
 		App.views.Specimen.superclass.initComponent.call(this);
