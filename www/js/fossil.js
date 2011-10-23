@@ -82,7 +82,7 @@
     }, {
       key_pair: 3,
       statement: "The fossil is long and tubular (tube shaped) or conical (cone shaped).",
-      help_image: "3a_tubular.png",
+      help_image: "3a_tubular_conical.png",
       next_statement_pair: 4
     }, {
       key_pair: 3,
