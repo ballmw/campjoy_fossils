@@ -104,7 +104,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 				items: [new Ext.Button({
 					text: '&lt;',
 					ui: 'back',
-					height: 30,
+					//height: 60,
 					flex: 1,
 					handler: function(){
 						toggleImage(-1);
@@ -116,7 +116,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 					}), new Ext.Button({
 					ui: 'forward',
 					text: '&gt;',
-					height: 30,
+					//height: 60,
 					flex: 1,
 					handler: function(){
 						toggleImage(1);
@@ -128,8 +128,6 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 	listeners : {
 		show : function() {
 			this.specimenPanel.removeAll();
-			
-			
 			
 			// Bug fix: force scroll to the top
 			this.scroller.scrollTo({x:0, y:0});
