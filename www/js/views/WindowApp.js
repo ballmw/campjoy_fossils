@@ -1,3 +1,7 @@
+/*
+ * This is very out of date, but when we want to support tablets this needs to be updated.
+ */
+
 App.WindowApp = Ext.extend(Ext.Panel, {
   fullscreen : true,
   layout : 'card',

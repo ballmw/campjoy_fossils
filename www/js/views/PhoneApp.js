@@ -5,14 +5,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 	layout : 'card',
 	modalWidth : 300,
 	modalHeight : 300,
-	cls: 'main',
-	/*tabBar : {
-		dock : 'bottom',
-		ui : 'dark',
-		layout : {
-			pack : 'center'
-		}
-	},*/
+	cls : 'main',
 	cardSwitchAnimation : {
 		type : 'slide',
 		cover : true
@@ -26,7 +19,6 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 	navigateToDichotomousKey : function() {
 		this.setActiveItem(1);
 	},
-	history : [],
 	navTo : function(dest, params, back_name) {
 		var index = 0;
 		var showTabBar = true;
@@ -36,11 +28,11 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 			case 'home':
 				showTabBar = true;
 				view = this.homeView;
-                view.restartPage();
+				view.restartPage();
 				break;
 			case 'key':
 				showTabBar = false;
-				if (!this.keyView) {
+				if(!this.keyView) {
 					this.keyView = new App.views.DichotemousKey();
 					this.add(this.keyView);
 				}
@@ -50,7 +42,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				break;
 			case 'catalog':
 				showTabBar = true;
-				if (!this.catalogView) {
+				if(!this.catalogView) {
 					this.catalogView = new App.views.Catalog();
 					this.add(this.catalogView);
 				}
@@ -58,8 +50,8 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				break;
 			case 'specimen':
 				showTabBar = false;
-				if (!this.specimenView) {
-				  this.specimenView = new App.views.Specimen();
+				if(!this.specimenView) {
+					this.specimenView = new App.views.Specimen();
 					this.add(this.specimenView);
 				}
 				this.specimenView.specimen = params;
@@ -76,7 +68,7 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		this.tabBar = new Ext.TabBar({
 			dock : 'bottom',
 			ui : 'dark',
-			cls: 'footer',
+			cls : 'footer',
 			centered : true,
 			items : [{
 				text : 'Home',
@@ -90,9 +82,6 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				scope : this,
 				handler : function() {
 					this.navTo('key');
-					//this.keyView.restartPage();
-					//this.keyView.bindOurEvents();
-					//this.setActiveItem(this.keyView);
 				}
 			}, {
 				text : 'Catalog',
@@ -100,16 +89,8 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				scope : this,
 				handler : function() {
 					this.navTo('catalog');
-					//App.viewport.setActiveItem(App.viewport.catalogView)
-				}				
-			}
-			//, { text: 'About',
-			//	iconCls : 'about',
-			//	handler : function() {
-			//		App.viewport.setActiveItem(App.viewport.aboutView)
-			//	}
-			//}
-			],
+				}
+			}],
 			layout : {
 				pack : 'center'
 			}
@@ -117,23 +98,14 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 
 		this.dockedItems = [this.tabBar];
 
-        //this.keyView = new App.views.DichotemousKey();
-		//this.aboutView = new App.views.About();
-		
-        this.homeView = new App.views.Home();
-		
+		this.homeView = new App.views.Home();
 		this.items = [this.homeView];
 
 		App.PhoneApp.superclass.initComponent.call(this);
-		//console.log("initted PhoneApp");
+
 		for(var prop in window.specimens) {
 			if(window.specimens.hasOwnProperty(prop))
 				App.stores.Specimen.add(window.specimens[prop]);
 		}
 	}
-	/*,
-	displayPortrait : function() {
-	},
-	displayLandscape : function() {
-	}*/
 });

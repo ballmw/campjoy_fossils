@@ -13,7 +13,6 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			scope : this,
 			handler : function() {
 				App.viewport.navTo(App.viewport.specimenView.back_name);
-				App.viewport.tabBar.show();
 			}
 		},{
 			xtype: 'spacer'
@@ -22,23 +21,19 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			width: 120,
 			scope:this,
 			handler: function(btn){
-				//App.viewport.specimenView.specimenDetailPanel.setWidth(App.viewport.modalWidth);
-				//App.viewport.specimenView.specimenDetailPanel.setHeight(App.viewport.modalHeight);
-				var specimenDetailPanel = new Ext.Panel({
-			hidden: true,
-			tpl: Ext.XTemplate.from('specimenDetail'),
-		    floating: true,
-            modal: true,
-            centered: true,
-            scroll: true,
-            styleHtmlContent: true
-      	});
-      	specimenDetailPanel.update(App.viewport.specimenView.specimen);
-      	specimenDetailPanel.setWidth(App.viewport.modalWidth);
-      	specimenDetailPanel.setHeight(App.viewport.modalHeight);
-				specimenDetailPanel.show();
-				//App.viewport.specimenView.specimenDetailPanel.scroller.scrollTo({x:0,y:0});					
-				//App.viewport.specimenView.doComponentLayout();
+			  var specimenDetailPanel = new Ext.Panel({
+        	    hidden: true,
+		        tpl: Ext.XTemplate.from('specimenDetail'),
+	            floating: true,
+                modal: true,
+                centered: true,
+                scroll: true,
+                styleHtmlContent: true
+      	      });
+      	      specimenDetailPanel.update(App.viewport.specimenView.specimen);
+      	      specimenDetailPanel.setWidth(App.viewport.modalWidth);
+      	      specimenDetailPanel.setHeight(App.viewport.modalHeight);
+			  specimenDetailPanel.show();
 			}
 		},{
 			xtype: 'spacer'
@@ -46,16 +41,14 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			text : 'Home',
 			handler : function() {
 				App.viewport.navTo('home');
-			    App.viewport.tabBar.show();
 			}
 		}],
 		dock : 'top'
 	}],
 	initComponent : function() {
 		this.specimenPanel = new Ext.Panel({
-			//scroll: true
+			
 		});
-		//modal window
 		
 		this.items = [this.specimenPanel];
 		
