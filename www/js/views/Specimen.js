@@ -6,7 +6,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 	layout : {
 		type : 'vbox',
 		align : 'stretch',
-		pack:'center'
+		pack : 'center'
 	},
 	defaults : {
 		flex : 1
@@ -59,7 +59,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			layout : {
 				type : 'vbox',
 				align : 'stretch',
-				pack: 'center'
+				pack : 'center'
 			},
 			defaults : {
 				//flex : 1
@@ -94,89 +94,21 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 	},
 	getSpecimenPanel : function() {
 
-		var carouselItems = [];
-
-		if($.isArray(this.specimen.photo_image)) {
-			$.each(this.specimen.photo_image, function() {
-				carouselItems.push(new Ext.Panel({
-					html : '<img style="display: block;   margin-left: auto;   margin-right: auto;" src="images/' + this + '">'
-				}));
+		// There are multiple photo_images.  Build a panel with a horizontal carousel
+		// to cycle through the images.
+		var fossilImages = [];
+		Ext.each(this.specimen.photo_image, function(item) {
+			fossilImages.push({
+				html : '<div style="margin:0 auto; width:200px;"><img src="images/' + item + '" height="120" width="200px" /></div>'
 			});
-		} else {
-			carouselItems.push(new Ext.Panel({
-				html : '<img style="text-align:center" src="images/' + this.specimen.photo_image + '">'
-			}));
-		}
-
-		var carousel = new Ext.Carousel({
-			indicator : true,
-			height : 140,
-			//layout : 'center',
-			pack:'center',
-			align : 'center',
-			defaults : {
-				align:'center',
-			    pack:'center',
-				//layout : 'center'
-			},
-			items : carouselItems
+		});
+		return new Ext.Panel({
+			items : [new Ext.Carousel({
+				items : fossilImages,
+				height : 150
+			})]
 		});
 
-		//carousel.doLayout();
-		return carousel;
-		/*
-
-		 if( typeof (this.specimen.photo_image) == 'string' || this.specimen.photo_image.length === 1) {
-		 return {
-		 html : '<img id="imgSpecimen" onload="App.viewport.specimenView.refresh();" src="images/' + ((this.specimen.photo_image.length === 1) ? this.specimen.photo_image[0] : this.specimen.photo_image) + '" width="200px" />'
-		 }
-		 }
-
-		 // There are multiple photo_images.  Build a panel with back button, the main image,
-		 // and forward button layed out horizontally.
-		 var me = this;
-		 var imageCount = this.specimen.photo_image.length;
-		 var currentImageIndex = 0;
-
-		 // Handler for back and forward buttons to cycle through the images
-		 var toggleImage = function(direction){
-		 currentImageIndex += direction;
-		 if (currentImageIndex < 0) {
-		 currentImageIndex = imageCount - 1;
-		 }
-		 currentImageIndex %= imageCount;
-		 Ext.fly('imgSpecimen').dom.src = 'images/' + me.specimen.photo_image[currentImageIndex];
-		 };
-
-		 return new Ext.Panel({
-		 items : [new Ext.Panel({
-		 layout : 'hbox',
-		 width : '100%',
-		 items : [new Ext.Button({
-		 text : '&lt;',
-		 ui : 'back',
-		 //height: 60,
-		 flex : 1,
-		 handler : function() {
-		 toggleImage(-1);
-		 }
-		 }), new Ext.Panel({
-		 width : 216,
-		 style : 'text-align:center;',
-		 html : '<img id="imgSpecimen" onload="App.viewport.specimenView.refresh();" src="images/' + this.specimen.photo_image[0] + '" height="120" width="200px" />'
-		 }), new Ext.Button({
-		 ui : 'forward',
-		 text : '&gt;',
-		 //height: 60,
-		 flex : 1,
-		 handler : function() {
-		 toggleImage(1);
-		 }
-		 })]
-		 })]
-		 });
-
-		 */
 	},
 	getShortDescriptionHtml : function() {
 		if(!this.specimen.short_description) {
@@ -197,7 +129,7 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			// Main specimen name
 			this.specimenPanel.add(new Ext.Container({
 				html : this.specimen.name,
-				height: 30
+				height : 30
 			}));
 
 			// Image(s).  If multiple photo_images are found, back and
