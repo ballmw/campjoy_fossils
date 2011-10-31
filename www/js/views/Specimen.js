@@ -81,47 +81,19 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			}
 		}
 		
-		// There are multiple photo_images.  Build a panel with back button, the main image,
-		// and forward button layed out horizontally.
-		var me = this;
-		var imageCount = this.specimen.photo_image.length;
-		var currentImageIndex = 0;
+		// There are multiple photo_images.  Build a panel with a horizontal carousel
+		// to cycle through the images.
+		var fossilImages = [];
+		Ext.each(this.specimen.photo_image, function(item){
+			fossilImages.push({
+				html: '<div style="margin:0 auto; width:200px;"><img src="images/' + item + '" height="120" width="200px" /></div>'
+			});
+		});
 		
-		// Handler for back and forward buttons to cycle through the images
-		var toggleImage = function(direction){
-			currentImageIndex += direction;
-			if (currentImageIndex < 0) {
-				currentImageIndex = imageCount - 1;
-			}
-			currentImageIndex %= imageCount;
-			Ext.fly('imgSpecimen').dom.src = 'images/' + me.specimen.photo_image[currentImageIndex];
-		};
-		
-		return new Ext.Panel({
-			items: [new Ext.Panel({
-				layout: 'hbox',
-				width: '100%',
-				items: [new Ext.Button({
-					text: '&lt;',
-					ui: 'back',
-					//height: 60,
-					flex: 1,
-					handler: function(){
-						toggleImage(-1);
-					}
-				}), new Ext.Panel({
-						width: 216,
-						style: 'text-align:center;',
-						html: '<img id="imgSpecimen" onload="App.viewport.specimenView.refresh();" src="images/' + this.specimen.photo_image[0] + '" height="120" width="200px" />'
-					}), new Ext.Button({
-					ui: 'forward',
-					text: '&gt;',
-					//height: 60,
-					flex: 1,
-					handler: function(){
-						toggleImage(1);
-					}
-				})]
+		return new Ext.Panel({		
+			items: [new Ext.Carousel({
+				items: fossilImages,
+				height: 150
 			})]
 		});
 	},
