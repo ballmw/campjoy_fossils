@@ -25,6 +25,7 @@
 <script src="js/views/DichotemousKey.js" type="text/javascript"></script>
 <script src="js/views/Catalog.js" type="text/javascript"></script>
 <script src="js/views/Specimen.js" type="text/javascript"></script>
+<script src="js/views/SimpleSpecimen.js" type="text/javascript"></script>
 <!--<script src="js/model/Question.js" type="text/javascript"></script>-->
 <script src="js/model/Specimen.js" type="text/javascript"></script>
 </head>
@@ -43,6 +44,9 @@ KEY
         </textarea>        
 <textarea id="specimenDetail" class="x-hidden-display" style="padding:5px;">
 	{description}
+</textarea>
+<textarea id="aboutApp" class="x-hidden-display" style="padding:5px;">
+	{info}<tpl for="devs">{name}</tpl>
 </textarea>
 <textarea id="nav" class="x-hidden-display">
             {text}

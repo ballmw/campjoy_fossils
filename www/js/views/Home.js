@@ -4,6 +4,30 @@ App.views.Home = Ext.extend(Ext.Panel, {
 	//fullscreen : true,
 	//scroll : true,
 	initComponent : function() {
+		this.toolbar =
+		this.dockedItems = [{
+		xtype : 'toolbar',
+		ui : 'dark',
+		cls: 'header',
+		items : [{
+			text : 'About',
+			scope : this,
+			handler : function() {
+				var popup = new Ext.Panel({
+        	    hidden: true,
+		        tpl: Ext.XTemplate.from('aboutApp'),
+	            floating: true,
+                modal: true,
+                centered: true,
+                scroll: true,
+                styleHtmlContent: true,
+                width: App.viewport.modalWidth,
+                height: App.viewport.modalHeight
+      	      });
+      	      popup.update(App.Config);
+      	      popup.show();
+			}
+		}]}];
 		this.items = [{
 			html : '<div class="homeContainer">' + 
 			         '<div class="homeAbsolute">' + 

@@ -20,18 +20,13 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 		this.setActiveItem(1);
 	},
 	navTo : function(dest, params, back_name) {
-		var index = 0;
-		var showTabBar = true;
 		var view = this.homeView;
 		switch (dest.toLowerCase()) {
-
 			case 'home':
-				showTabBar = true;
 				view = this.homeView;
 				view.restartPage();
 				break;
 			case 'key':
-				showTabBar = false;
 				if(!this.keyView) {
 					this.keyView = new App.views.DichotemousKey();
 					this.add(this.keyView);
@@ -41,7 +36,6 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				view = this.keyView;
 				break;
 			case 'catalog':
-				showTabBar = true;
 				if(!this.catalogView) {
 					this.catalogView = new App.views.Catalog();
 					this.add(this.catalogView);
@@ -49,18 +43,29 @@ App.PhoneApp = Ext.extend(Ext.Panel, {
 				view = this.catalogView;
 				break;
 			case 'specimen':
-				showTabBar = false;
-				if(!this.specimenView) {
-					this.specimenView = new App.views.Specimen();
-					this.add(this.specimenView);
+				if(params.type == 'history') {
+					if(this.simpleSpecimenView == null) {
+						this.simpleSpecimenView = new App.views.SimpleSpecimen({
+							specimen : params,
+							back_name : back_name
+						});
+						this.add(this.simpleSpecimenView);
+					}
+					view = this.simpleSpecimenView;
+				} else {
+					if(this.specimenView == null) {
+						this.specimenView = new App.views.Specimen({
+							specimen : params,
+							back_name : back_name
+						});
+						this.add(this.specimenView);
+					}
+					view = this.specimenView;
 				}
-				this.specimenView.specimen = params;
-				this.specimenView.back_name = back_name;
-				view = this.specimenView;
+				view.back_name = back_name;
+				view.specimen = params;
 				break;
 		}
-		if(showTabBar)
-			this.tabBar.show(true);
 		this.setActiveItem(view);
 	},
 	initComponent : function() {
