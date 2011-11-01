@@ -103,10 +103,10 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 			});
 		});
 		return new Ext.Panel({
-			items : [new Ext.Carousel({
+			items : [(fossilImages.length > 1) ? new Ext.Carousel({
 				items : fossilImages,
 				height : 150
-			})]
+			}) : fossilImages[0]]
 		});
 
 	},
@@ -128,12 +128,12 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 
 			// Main specimen name
 			this.specimenPanel.add(new Ext.Container({
-				html : this.specimen.name,
+				html : '<div class="specimenName">' + this.specimen.name + '</div>',
 				height : 30
 			}));
 
-			// Image(s).  If multiple photo_images are found, back and
-			// forward buttons allow navigation through each image.
+			// Image(s).  If multiple photo_images are found, carousel allows
+			// swiping through them.
 			this.specimenPanel.add(this.getSpecimenPanel());
 
 			// short_description and any illustrations
