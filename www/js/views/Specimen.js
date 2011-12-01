@@ -138,7 +138,9 @@ App.views.Specimen = Ext.extend(Ext.Panel, {
 
 			// short_description and any illustrations
 			this.specimenPanel.add(new Ext.Container({
-				html : '<div style="padding-right:10px;">' + this.getShortDescriptionHtml() + this.getIllustrationHtml() + '</div>'
+				//TODO: When illustrations are allowed, uncomment this
+				//html : '<div style="padding-right:10px;">' + this.getShortDescriptionHtml() + this.getIllustrationHtml() + '</div>'
+				html : '<div style="padding-right:10px;">' + this.getShortDescriptionHtml() + '</div>'
 			}));
 
 			this.specimenPanel.doComponentLayout();
