@@ -59,21 +59,14 @@ App.views.SimpleSpecimen = Ext.extend(Ext.Carousel, {
 
 		this.removeAll();
 
-		if($.isArray(this.specimen.photo_image)) {
-			$.each(this.specimen.photo_image, function() {
-				carouselItems.push(new Ext.Panel({
-					html : '<img src="images/' + this + '">'
-				}));
-			});
-		} else {
+		Ext.each(this.specimen.photo_image, function(item) {
 			carouselItems.push(new Ext.Panel({
-				html : '<img src="images/' + this.specimen.photo_image + '">'
+				html : '<img src="images/' + item + '">'
 			}));
-		}
-
+		});
 		var carousel = this;
-		$.each(carouselItems, function() {
-			carousel.add(this);
+		Ext.each(carouselItems, function(item) {
+			carousel.add(item);
 		});
 
 		this.doLayout();

@@ -104,30 +104,32 @@ App.views.DichotemousKey = Ext.extend(Ext.Panel, {
 			$(specimenDiv).css('background-color', '#888');
 		});
 
-		$('.key-option').bind('touchend', function(event) {
+		$('.key-option').bind('tap', function(event) {
 			var specimenDiv = $(event.target).closest(".key-option")[0];
-			var nextStatementId = specimenDiv.getAttribute('data-selectedoption');
+			if(specimenDiv != undefined) {
+				var nextStatementId = specimenDiv.getAttribute('data-selectedoption');
 
-			$(specimenDiv).css('background-color', '');
+				$(specimenDiv).css('background-color', '');
 
-			if(!nextStatementId) {
-				var specimenIndex = specimenDiv.getAttribute('data-index');
-				var specimen = App.viewport.keyView.getSpecimen(specimenIndex - 1);
-				App.viewport.navTo('specimen', specimen, 'key');
-				return;
+				if(!nextStatementId) {
+					var specimenIndex = specimenDiv.getAttribute('data-index');
+					var specimen = App.viewport.keyView.getSpecimen(specimenIndex - 1);
+					App.viewport.navTo('specimen', specimen, 'key');
+					return;
+				}
+
+				//transition
+				App.viewport.keyView.transitionPage();
+
+				var nextStatementId = parseInt(nextStatementId);
+
+				var questions = fossil_key.find_statement_pair(nextStatementId);
+				if(App.viewport.keyView.checkKeyAlreadyOnStack(nextStatementId) == false) {
+					App.viewport.keyView.gameStack.push(questions);
+				}
+
+				App.viewport.keyView.updatePage(questions);
 			}
-
-			//transition
-			App.viewport.keyView.transitionPage();
-
-			var nextStatementId = parseInt(nextStatementId);
-
-			var questions = fossil_key.find_statement_pair(nextStatementId);
-			if(App.viewport.keyView.checkKeyAlreadyOnStack(nextStatementId) == false) {
-				App.viewport.keyView.gameStack.push(questions);
-			}
-
-			App.viewport.keyView.updatePage(questions);
 		});
 	}
 });

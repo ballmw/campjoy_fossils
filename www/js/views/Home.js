@@ -47,7 +47,7 @@ App.views.Home = Ext.extend(Ext.Panel, {
 	},
 	listeners : {
 		afterlayout : function() {
-			this.body.on('touchstart', function() {
+			this.body.on('tap', function() {
 				App.viewport.navTo('key');
 			});
 			$('.homeCircle').removeClass('highlight-on');
