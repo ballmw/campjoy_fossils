@@ -45,7 +45,7 @@ KEY
 	{description}
 </textarea>
 <textarea id="aboutApp" class="x-hidden-display" style="padding:5px;">
-	{info}<tpl for="devs">{name}</tpl>
+	{info}<tpl for="devs">{name}<tpl if="xindex < xcount">, </tpl><tpl if="xindex == xcount">.</tpl></tpl>
 </textarea>
 <textarea id="nav" class="x-hidden-display">
             {text}
