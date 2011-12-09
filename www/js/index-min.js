@@ -1,0 +1,1 @@
+Ext.ns("App","App.views","App.stores");App.defaultAnim=Ext.is.Android?false:"slide";App=new Ext.Application({defaultTarget:"viewport",name:"App",launch:function(){this.viewport=new App.PhoneApp()}});
