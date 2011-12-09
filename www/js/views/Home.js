@@ -4,7 +4,7 @@ App.views.Home = Ext.extend(Ext.Panel, {
 	//fullscreen : true,
 	//scroll : true,
 	initComponent : function() {
-		this.toolbar =
+		//this.toolbar =
 		this.dockedItems = [{
 		xtype : 'toolbar',
 		ui : 'dark',

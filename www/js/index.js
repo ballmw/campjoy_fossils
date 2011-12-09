@@ -18,16 +18,16 @@ App = new Ext.Application({
 	},*/
 
 	launch : function() {
-		this.longitude = null;
-		this.latitude = null;
-		this.locationInitialized = false;
+		//this.longitude = null;
+		//this.latitude = null;
+		//this.locationInitialized = false;
 		//console.log('on orientation:');
 		//console.log((( typeof window.orientation != 'undefined') && ('onorientationchange' in window)));
 
 		//console.log(window.orientation);
 		//console.log(Ext.getOrientation());
-		this.orientation = window.orientation == 0 || window.orientation == 180 ? 'portrait' : 'landscape';
-		this.orientation = Ext.getOrientation();
+		//this.orientation = window.orientation == 0 || window.orientation == 180 ? 'portrait' : 'landscape';
+		//this.orientation = Ext.getOrientation();
 		//if (Ext.is.Phone){
 		this.viewport = new App.PhoneApp();
 		// }

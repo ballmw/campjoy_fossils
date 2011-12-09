@@ -2,7 +2,7 @@ App.Config = Ext
     .extend(
         Object,
         {
-          info:"The fossilator was lovingly developed for <a href='http://www.camp-joy.org'>Camp Joy</a> by volunteer programmers at the 2011 <a href='http://southwestohiogivecamp.org/'>Southwest Ohio Give Camp</a>.<br><img width='120' src='images/campjoy-logo.jpg'><img width='120' src='images/swogc-logo.jpg'>",
+          info:"The fossilator was lovingly developed for <a href='http://www.camp-joy.org'>Camp Joy</a> by volunteer programmers at the 2011 <a href='http://southwestohiogivecamp.org/'>Southwest Ohio Give Camp</a>.<br><img width='120' src='images/campjoy-logo.jpg'><img width='120' src='images/swogc-logo.jpg'> Special thanks to; and if you crave more knowledge check out <a href='http://drydredgers.org'>Dry Dredgers</a> and <a href='http://www.cincymuseum.org/'>The Cincinnati Museum</a>.  Book a visit for your 4th -8th grade classes in Outdoor Education <a href='http://www.camp-joy.org/outdoor-education'>here</a>.",
           key:"Dichotemous Key",
           catalog:"Catalog",
           devs:[{name:'Michael Ball', link:'http://www.twitter.com/ballmw', role:"Lead Programmer"},
