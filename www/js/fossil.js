@@ -21,8 +21,8 @@
       type: 'sample',
       photo_image: ["trilobite.png", "trilobite1.png"],
       drawing_image: ["Trilobite_anat.jpg"],
-      description: "<b>Trilobites</b> are extinct members of the Arthropod family which were quite common. Fossils of these creatures, although plentiful, are sometimes difficult to find.  They are most often found 'enrolled' (rolled in a ball). This may have been a way of defending themselves from predators (such as the cephalopod) or from severe storms that often ravaged the Ordovician Sea. Many died in this position and were found 440 million years later as fossils. One possible reason why they are more commonly found enrolled than outstretched is that they hold together as fossils better than ones that are buried in prone positions. The body and appendages of a Trilobite are encased in and exoskeleton made of protein chitin. The exoskeleton is like a suit of armor with rigid parts articulated by flexible joints. Trilobites are classified as arthropods, which literally means 'jointed legs.' Arthropods grow by periodically shedding their exoskeletons and forming new skin. These shed exoskeletons, called molts, are sometimes the fossil remains and may partly explain the abundance of trilobite fossils. There are 16 genera of Trilobites from the Cincinnati series. They were thought to have actively hunted prey buried in the sediment, based on their leg structure and chewing mouth parts.",
-      short_description: "Trilobites are extinct members of the Arthropod family. The body and appendages of a Trilobite are encased in and exoskeleton made of protein chitin."
+      description: "<b>Trilobites</b> are extinct members of the Arthropod family which were quite common. Fossils of these creatures, although plentiful, are sometimes difficult to find.  They are most often found 'enrolled' (rolled in a ball). This may have been a way of defending themselves from predators (such as the cephalopod) or from severe storms that often ravaged the Ordovician Sea. Many died in this position and were found 440 million years later as fossils. One possible reason why they are more commonly found enrolled than outstretched is that they hold together as fossils better than ones that are buried in prone positions. The body and appendages of a Trilobite are encased in an exoskeleton made of protein chitin. The exoskeleton is like a suit of armor with rigid parts articulated by flexible joints. Trilobites are classified as arthropods, which literally means 'jointed legs.' Arthropods grow by periodically shedding their exoskeletons and forming new skin. These shed exoskeletons, called molts, are sometimes the fossil remains and may partly explain the abundance of trilobite fossils. There are 16 genera of Trilobites from the Cincinnati series. They were thought to have actively hunted prey buried in the sediment, based on their leg structure and chewing mouth parts.",
+      short_description: "Trilobites are extinct members of the Arthropod family. The body and appendages of a Trilobite are encased in an exoskeleton made of protein chitin."
     },
     BRYOZOAN: {
       name: "BRYOZOAN",
@@ -63,7 +63,7 @@
       drawing_image: ["HornCoral_anat_1.jpg", "HornCoral_anat_2.jpg"],
       description: "<b>Corals</b> are found today in great abundance and variety in marine rocks, and have existed as far back as the Cambrian period. 'Horn coral' or 'cup coral' resembles the modern sea-anemones but had a thick calcium carbonate skeleton (corallite), formed from its secretions. Horn Corals are part of a group of animals called Cnidaria (stinging tentacles). They had hollow, sack-like tentacles they used to grab food from the surrounding seawater. The fossil is only the corallite of the organism -- a skeleton without the flesh.",
       short_description: "Horn Corals are part of a group of animals called Cnidaria (stinging tentacles). They had hollow, sack-like tentacles they used to grab food from the surrounding seawater."
-    }/*,
+    },
     TIMELINE1: {
       name: "Geological Timeline",
       type: 'history',
@@ -79,7 +79,7 @@
       drawing_image: [""],
       description: "",
       short_description: ""
-    }*/
+    }
   };
   window.fossils_data = [
     {
@@ -99,7 +99,7 @@
       specimen: specimens.BRACHIOPOD
     }, {
       key_pair: 2,
-      statement: " The right and left sides of the shell are not mirror images of each other.",
+      statement: "The right and left sides of the shell are not mirror images of each other.",
       help_image: "2b_not_mirrored.png",
       specimen: specimens.PELECYPOD
     }, {
